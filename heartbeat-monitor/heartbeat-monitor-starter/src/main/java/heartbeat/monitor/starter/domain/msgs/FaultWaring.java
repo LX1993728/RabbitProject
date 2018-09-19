@@ -1,6 +1,7 @@
 package heartbeat.monitor.starter.domain.msgs;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @apiNote 故障告警实体类
@@ -13,39 +14,39 @@ public class FaultWaring implements Serializable {
     public FaultWaring() {
     }
 
-    private String  userName; // 登录用户名
+    private Date warnBeginTime; // 预警开始时间
 
-    private String ip;  // 用户登录IP
+    private String warnIp; // 预警IP
 
-    private String  exceptionType; // 异常类型
+    private String warningContent; //预警内容
 
 
     private String flag; // 系统标识
 
     private String  prepositionId; // 如果非部委前置系统，此字段是空值
 
-    public String getUserName() {
-        return userName;
+    public Date getWarnBeginTime() {
+        return warnBeginTime;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setWarnBeginTime(Date warnBeginTime) {
+        this.warnBeginTime = warnBeginTime;
     }
 
-    public String getIp() {
-        return ip;
+    public String getWarnIp() {
+        return warnIp;
     }
 
-    public void setIp(String ip) {
-        this.ip = ip;
+    public void setWarnIp(String warnIp) {
+        this.warnIp = warnIp;
     }
 
-    public String getExceptionType() {
-        return exceptionType;
+    public String getWarningContent() {
+        return warningContent;
     }
 
-    public void setExceptionType(String exceptionType) {
-        this.exceptionType = exceptionType;
+    public void setWarningContent(String warningContent) {
+        this.warningContent = warningContent;
     }
 
     public String getFlag() {
@@ -63,4 +64,5 @@ public class FaultWaring implements Serializable {
     public void setPrepositionId(String prepositionId) {
         this.prepositionId = prepositionId;
     }
+
 }

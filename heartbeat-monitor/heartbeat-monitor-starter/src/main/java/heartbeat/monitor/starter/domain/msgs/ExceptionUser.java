@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @apiNote 异常用户
  * @author liuxun
+ * @apiNote 异常用户
  */
 public class ExceptionUser implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -13,39 +13,39 @@ public class ExceptionUser implements Serializable {
     public ExceptionUser() {
     }
 
-    private Date warnBeginTime; // 预警开始时间
+    private String userName; // 登录用户名
 
-    private String warnIp; // 预警IP
+    private String ip;  // 用户登录IP
 
-    private String warningContent; //预警内容
+    private String exceptionType; // 异常类型
 
 
     private String flag; // 系统标识
 
-    private String  prepositionId; // 如果非部委前置系统，此字段是空值
+    private String prepositionId; // 如果非部委前置系统，此字段是空值
 
-    public Date getWarnBeginTime() {
-        return warnBeginTime;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setWarnBeginTime(Date warnBeginTime) {
-        this.warnBeginTime = warnBeginTime;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getWarnIp() {
-        return warnIp;
+    public String getIp() {
+        return ip;
     }
 
-    public void setWarnIp(String warnIp) {
-        this.warnIp = warnIp;
+    public void setIp(String ip) {
+        this.ip = ip;
     }
 
-    public String getWarningContent() {
-        return warningContent;
+    public String getExceptionType() {
+        return exceptionType;
     }
 
-    public void setWarningContent(String warningContent) {
-        this.warningContent = warningContent;
+    public void setExceptionType(String exceptionType) {
+        this.exceptionType = exceptionType;
     }
 
     public String getFlag() {
@@ -63,4 +63,5 @@ public class ExceptionUser implements Serializable {
     public void setPrepositionId(String prepositionId) {
         this.prepositionId = prepositionId;
     }
+
 }

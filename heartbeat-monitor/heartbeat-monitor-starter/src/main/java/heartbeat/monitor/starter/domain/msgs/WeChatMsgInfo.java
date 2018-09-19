@@ -13,7 +13,6 @@ public class WeChatMsgInfo implements Serializable {
     public WeChatMsgInfo() {
     }
 
-    private Long id; // 主键ID
 
     private Date sendTime; // 发出时间
 
@@ -59,11 +58,4 @@ public class WeChatMsgInfo implements Serializable {
         isSuccess = success;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 }

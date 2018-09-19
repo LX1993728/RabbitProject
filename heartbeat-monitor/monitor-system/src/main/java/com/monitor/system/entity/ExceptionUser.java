@@ -15,20 +15,17 @@ public class ExceptionUser implements Serializable {
 
     public ExceptionUser() {
     }
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id; // 异常用户ID
+    private Long id; // ID
 
-    @Column
-    private Date warnBeginTime; // 预警开始时间
+    @Column(nullable = true)
+    private String  userName; // 登录用户名
 
-    @Column
-    private String warnIp; // 预警IP
+    @Column(nullable = true)
+    private String ip;  // 用户登录IP
 
-    @Column
-    private String warningContent; //预警内容
+    private String  exceptionType; // 异常类型
 
 
     @Column(nullable = false)
@@ -36,7 +33,6 @@ public class ExceptionUser implements Serializable {
 
     @Column(nullable = true)
     private String  prepositionId; // 如果非部委前置系统，此字段是空值
-
 
     public Long getId() {
         return id;
@@ -46,28 +42,28 @@ public class ExceptionUser implements Serializable {
         this.id = id;
     }
 
-    public Date getWarnBeginTime() {
-        return warnBeginTime;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setWarnBeginTime(Date warnBeginTime) {
-        this.warnBeginTime = warnBeginTime;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getWarnIp() {
-        return warnIp;
+    public String getIp() {
+        return ip;
     }
 
-    public void setWarnIp(String warnIp) {
-        this.warnIp = warnIp;
+    public void setIp(String ip) {
+        this.ip = ip;
     }
 
-    public String getWarningContent() {
-        return warningContent;
+    public String getExceptionType() {
+        return exceptionType;
     }
 
-    public void setWarningContent(String warningContent) {
-        this.warningContent = warningContent;
+    public void setExceptionType(String exceptionType) {
+        this.exceptionType = exceptionType;
     }
 
     public String getFlag() {
@@ -85,4 +81,6 @@ public class ExceptionUser implements Serializable {
     public void setPrepositionId(String prepositionId) {
         this.prepositionId = prepositionId;
     }
-}
+
+
+  }

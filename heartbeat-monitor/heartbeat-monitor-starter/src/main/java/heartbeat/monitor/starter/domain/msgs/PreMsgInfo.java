@@ -12,7 +12,7 @@ public class PreMsgInfo implements Serializable {
     }
 
 
-    private String taskID;// 任务ID
+    private String taskId;// 任务ID
 
     private String sendIp; //发出IP
 
@@ -20,12 +20,12 @@ public class PreMsgInfo implements Serializable {
 
     private String prepositionId; // 此处处理的是部委前置的信息，此字段值用不为null
 
-    public String getTaskID() {
-        return taskID;
+    public String getTaskId() {
+        return taskId;
     }
 
-    public void setTaskID(String taskID) {
-        this.taskID = taskID;
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
     }
 
     public String getSendIp() {

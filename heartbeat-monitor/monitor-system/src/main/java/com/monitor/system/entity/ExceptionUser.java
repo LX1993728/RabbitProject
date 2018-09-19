@@ -16,7 +16,7 @@ public class ExceptionUser implements Serializable {
     public ExceptionUser() {
     }
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // ID
 
     @Column(nullable = true)

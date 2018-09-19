@@ -17,7 +17,7 @@ public class DirectMsgInfo implements Serializable {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // 主键ID
 
     private String eventId; // 事件标识

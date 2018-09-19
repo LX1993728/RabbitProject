@@ -18,7 +18,7 @@ public class ReportMsgInfo implements Serializable {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // 主键ID
 
     private String  receiveIp; // 接收IP

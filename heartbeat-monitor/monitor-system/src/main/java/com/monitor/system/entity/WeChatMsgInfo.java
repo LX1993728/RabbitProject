@@ -19,7 +19,7 @@ public class WeChatMsgInfo implements Serializable {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // 主键ID
 
     private Date sendTime; // 发出时间

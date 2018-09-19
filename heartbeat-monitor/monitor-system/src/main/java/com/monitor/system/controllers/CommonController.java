@@ -45,7 +45,7 @@ public class CommonController {
 
     @ApiOperation(value = "获取每种消息类型的条数", tags = {""})
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "prepositionID", value = "部委前置的ID标识 如果不是部委前置可设置为空", required = false, paramType = "query", dataType = "String"),
+            @ApiImplicitParam(name = "prepositionId", value = "部委前置的ID标识 如果不是部委前置可设置为空", required = false, paramType = "query", dataType = "String"),
             @ApiImplicitParam(name = "flag", value = "系统标识符", required = true, paramType = "query", dataType = "String"),
             @ApiImplicitParam(name = "type", value = "0 表示获取异常用户 1表示获取故障告警", required = true, paramType = "query", dataType = "Integer")
 
@@ -72,7 +72,7 @@ public class CommonController {
 
     @ApiOperation(value = "获取指定服务的在线离线用户数", tags = {""})
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "prepositionID", value = "部委前置的ID标识 如果不是部委前置可设置为空", required = false, paramType = "query", dataType = "String"),
+            @ApiImplicitParam(name = "prepositionId", value = "部委前置的ID标识 如果不是部委前置可设置为空", required = false, paramType = "query", dataType = "String"),
             @ApiImplicitParam(name = "flag", value = "系统标识符", required = true, paramType = "query", dataType = "String")
     })
     @GetMapping("/usercount")

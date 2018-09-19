@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-@ConditionalOnProperty(prefix = "projects.system", value = "flag", havingValue = MonitorFlags.REPORTING_FLAG)
+@ConditionalOnProperty(prefix = "projects.system", value = "flag", havingValue = MonitorFlags.WECHAT_FLAG)
 public class MonitorWeChatSender {
     @Autowired
     private BusinessGeneralSender businessGeneralSender;

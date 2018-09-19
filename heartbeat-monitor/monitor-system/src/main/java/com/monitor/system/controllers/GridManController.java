@@ -111,10 +111,10 @@ public class GridManController {
     // ===================================================
     @ApiOperation(value = "获取每种消息类型的条数", tags = {""})
     @GetMapping("/gridman/counts")
-    public Object getMsgCountOfGridMan(String prepositionID) {
+    public Object getMsgCountOfGridMan(String prepositionId) {
         Map<String, Long> countMap = new HashMap<>();
         Map<String, Object> params = new HashMap<>();
-        params.put("prepositionID", prepositionID);
+        params.put("prepositionId", prepositionId);
         final Long instructionCount = generalService.getTotalCount(GridManMsgInfo.class, GridManReceiveInstruction.class, params);
         final Long executionCount = generalService.getTotalCount(GridManMsgInfo.class, GridManSendExecution.class, params);
         final Long receiveTaskCount = generalService.getTotalCount(GridManMsgInfo.class, GridManReceiveTask.class, params);

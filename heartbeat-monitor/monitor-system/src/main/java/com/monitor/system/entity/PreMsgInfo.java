@@ -19,11 +19,11 @@ public class PreMsgInfo implements Serializable {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // 主键ID
 
     @Column
-    private String taskID;// 任务ID
+    private String taskId;// 任务ID
 
     @Column
     private String sendIp; //发出IP
@@ -44,12 +44,12 @@ public class PreMsgInfo implements Serializable {
         this.id = id;
     }
 
-    public String getTaskID() {
-        return taskID;
+    public String getTaskId() {
+        return taskId;
     }
 
-    public void setTaskID(String taskID) {
-        this.taskID = taskID;
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
     }
 
     public String getSendIp() {

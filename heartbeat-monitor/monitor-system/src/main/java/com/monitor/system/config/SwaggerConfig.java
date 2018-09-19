@@ -41,9 +41,9 @@ public class SwaggerConfig{
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("direct Doc")
-                .description("direct Api文档")
-                .termsOfServiceUrl("http://git.oschina.net/liuxxun/monitor")
+                .title("monitor Doc")
+                .description("monitor Api文档")
+                .termsOfServiceUrl("http://git.oschina.net/liuxun/monitor")
                 .contact("anrong")
                 .version("2.0")
                 .build();

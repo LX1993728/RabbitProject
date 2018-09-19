@@ -45,7 +45,7 @@ public class MonitorBusinessResolver extends AbstractBusinessReceiver {
             logger.info("+++++++部委前置覆盖成功 ++++++++++");
         } else if (objectType.equals(PreSendReport.class.getSimpleName())) {
             PreSendReport pre = JSON.parseObject(body, PreSendReport.class);
-            generalService.saveOrUpdateByField(PreMsgInfo.class, PreSendReport.class, "taskID", pre.getTaskID(), pre);
+            generalService.saveOrUpdateByField(PreMsgInfo.class, PreSendReport.class, "taskId", pre.getTaskId(), pre);
             logger.info("+++++++部委前置覆盖成功 ++++++++++");
         }
 

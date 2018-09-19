@@ -64,7 +64,7 @@ public class MonitorPreSender {
     public Boolean sendSendReport(PreSendReport preSendReport) {
         Boolean isSuccess = true;
         preSendReport.setPrepositionId(properties.getId());
-        if (preSendReport.getTaskID() == null) {
+        if (preSendReport.getTaskId() == null) {
             throw new RuntimeException("taskId 不能为空");
         }
         final String body = JSON.toJSONString(preSendReport);

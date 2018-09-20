@@ -6,10 +6,7 @@ import com.monitor.system.repository.WrapperService;
 import com.monitor.system.vo.ErrorVO;
 import com.monitor.system.vo.ServiceAppVO;
 
-import heartbeat.monitor.starter.domain.Health;
-import heartbeat.monitor.starter.domain.MonitorFlags;
-import heartbeat.monitor.starter.domain.ServiceApp;
-import heartbeat.monitor.starter.domain.UserCount;
+import heartbeat.monitor.starter.domain.*;
 import heartbeat.monitor.starter.processors.HeartBeatResolver;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -23,10 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author liuxun
@@ -43,22 +37,22 @@ public class CommonController {
 
     @Autowired
     private WrapperService wrapperService;
-    
+
     @Autowired
     private DirectController directController;
-    
+
     @Autowired
     private GridManController gridManController;
-    
+
     @Autowired
     private PrePositionController prePositionController;
-    
+
     @Autowired
     private ReportController reportController;
 
     @Autowired
     private WechatController wechatController;
-    
+
     @PersistenceContext
     private EntityManager em;
 
@@ -118,44 +112,80 @@ public class CommonController {
     public Object getAllHealthInfo() {
         return heartBeatResolver.getHealthInfo();
     }
-    
+
     @ApiOperation(value = "获取所有服务的部署以及健康信息+消息数量", tags = {""})
     @GetMapping("/appinfos")
     public Object getAllHealthAndCounts() {
-    	Health healthInfo = heartBeatResolver.getHealthInfo();
-    	List<ServiceApp> preApps = healthInfo.getPreApps();
-    	List<ServiceApp> otherApps = healthInfo.getOtherApps();
-    	Map<String,List<ServiceAppVO>> healthVO= new HashMap<>();
-    	List<ServiceAppVO> preAppVOs = new ArrayList<>();
-    	List<ServiceAppVO> otherAppVOs = new ArrayList<>();
-    	for (ServiceApp app : preApps) {
-			ServiceAppVO appVO = new ServiceAppVO();
-			appVO.copyPropertyToThis(app);
-			 Map<String, Long> countOfPreposition = prePositionController.getMsgCountOfPreposition(app.getId());
-			appVO.setCounts(countOfPreposition);
-			preAppVOs.add(appVO);
-		}
-    	for (ServiceApp app : otherApps) {
-    		ServiceAppVO appVO = new ServiceAppVO();
-    		appVO.copyPropertyToThis(app);
-    		Map<String, Long> counts = null;
-    		if(app.getFlag().equals(MonitorFlags.DIRECT_FLAG)) {
-    			counts = directController.getMsgCountOfDirect();
-    		}else if (app.getFlag().equals(MonitorFlags.GRIDMAN_FLAG)) {
-				counts = gridManController.getMsgCountOfGridMan();
-			}else if (app.getFlag().equals(MonitorFlags.REPORTING_FLAG)) {
-				counts = reportController.getMsgCountOfReport();
-			}else if (app.getFlag().equals(MonitorFlags.WECHAT_FLAG)) {
-				counts = wechatController.getMsgCountOfWechat();
-			}
-    		appVO.setCounts(counts);
-    		otherAppVOs.add(appVO);
-    	}
-    	
-    	healthVO.put("preApps", preAppVOs);
-    	healthVO.put("otherApps", otherAppVOs);
-    	return healthVO;
+        Long normals = 0L;
+        Long warns = 0L;
+        Long errors = 0L;
+
+        Health healthInfo = heartBeatResolver.getHealthInfo();
+        List<ServiceApp> preApps = healthInfo.getPreApps();
+        List<ServiceApp> otherApps = healthInfo.getOtherApps();
+        Map<String, List<ServiceAppVO>> healthVO = new HashMap<>();
+        List<ServiceAppVO> preAppVOs = new ArrayList<>();
+        List<ServiceAppVO> otherAppVOs = new ArrayList<>();
+        for (ServiceApp app : preApps) {
+            ServiceAppVO appVO = new ServiceAppVO();
+            appVO.copyPropertyToThis(app);
+            Map<String, Long> countOfPreposition = prePositionController.getMsgCountOfPreposition(app.getId());
+            appVO.setCounts(countOfPreposition);
+            preAppVOs.add(appVO);
+
+            // 统计数量
+            Set<InstanceItem> instances = app.getInstances();
+            for (InstanceItem instance : instances) {
+                if (instance.getLevel() == 0) {
+                    normals++;
+                } else if (instance.getLevel() == 1) {
+                    warns++;
+                } else if (instance.getLevel() == 2) {
+                    errors++;
+                }
+            }
+        }
+        for (ServiceApp app : otherApps) {
+            ServiceAppVO appVO = new ServiceAppVO();
+            appVO.copyPropertyToThis(app);
+            Map<String, Long> counts = null;
+            if (app.getFlag().equals(MonitorFlags.DIRECT_FLAG)) {
+                counts = directController.getMsgCountOfDirect();
+            } else if (app.getFlag().equals(MonitorFlags.GRIDMAN_FLAG)) {
+                counts = gridManController.getMsgCountOfGridMan();
+            } else if (app.getFlag().equals(MonitorFlags.REPORTING_FLAG)) {
+                counts = reportController.getMsgCountOfReport();
+            } else if (app.getFlag().equals(MonitorFlags.WECHAT_FLAG)) {
+                counts = wechatController.getMsgCountOfWechat();
+            }
+            appVO.setCounts(counts);
+            otherAppVOs.add(appVO);
+
+            // 统计数量
+            Set<InstanceItem> otherInstances = app.getInstances();
+            for (InstanceItem otherInstance : otherInstances) {
+                if (otherInstance.getLevel() == 0) {
+                    normals++;
+                } else if (otherInstance.getLevel() == 1) {
+                    warns++;
+                } else if (otherInstance.getLevel() == 2) {
+                    errors++;
+                }
+            }
+        }
+        Map<String, Long> infos = new HashMap<>();
+        infos.put("normals", normals);
+        infos.put("warns", warns);
+        infos.put("errors", errors);
+        healthVO.put("preApps", preAppVOs);
+        healthVO.put("otherApps", otherAppVOs);
+
+        Map<String,Object> resultMap = new HashMap<>();
+        resultMap.put("healths",healthVO);
+        resultMap.put("infos",infos);
+
+        return resultMap;
     }
-    
+
 
 }

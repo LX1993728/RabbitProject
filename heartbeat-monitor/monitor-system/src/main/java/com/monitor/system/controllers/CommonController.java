@@ -131,7 +131,6 @@ public class CommonController {
             appVO.copyPropertyToThis(app);
             Map<String, Long> countOfPreposition = prePositionController.getMsgCountOfPreposition(app.getId());
             appVO.setCounts(countOfPreposition);
-            preAppVOs.add(appVO);
 
             // 统计数量
             Set<InstanceItem> instances = app.getInstances();
@@ -143,7 +142,11 @@ public class CommonController {
                 } else if (instance.getLevel() == 2) {
                     errors++;
                 }
+                if (instance.getLevel() > appVO.getRun()) {
+                    appVO.setRun(instance.getLevel());
+                }
             }
+            preAppVOs.add(appVO);
         }
         for (ServiceApp app : otherApps) {
             ServiceAppVO appVO = new ServiceAppVO();
@@ -159,7 +162,6 @@ public class CommonController {
                 counts = wechatController.getMsgCountOfWechat();
             }
             appVO.setCounts(counts);
-            otherAppVOs.add(appVO);
 
             // 统计数量
             Set<InstanceItem> otherInstances = app.getInstances();
@@ -171,7 +173,11 @@ public class CommonController {
                 } else if (otherInstance.getLevel() == 2) {
                     errors++;
                 }
+                if (otherInstance.getLevel() > appVO.getRun()) {
+                    appVO.setRun(otherInstance.getLevel());
+                }
             }
+            otherAppVOs.add(appVO);
         }
         Map<String, Long> infos = new HashMap<>();
         infos.put("normals", normals);
@@ -180,9 +186,9 @@ public class CommonController {
         healthVO.put("preApps", preAppVOs);
         healthVO.put("otherApps", otherAppVOs);
 
-        Map<String,Object> resultMap = new HashMap<>();
-        resultMap.put("healths",healthVO);
-        resultMap.put("infos",infos);
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap.put("healths", healthVO);
+        resultMap.put("infos", infos);
 
         return resultMap;
     }

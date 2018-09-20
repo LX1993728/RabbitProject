@@ -8,6 +8,8 @@ import heartbeat.monitor.starter.domain.ServiceApp;
 public class ServiceAppVO extends ServiceApp {
 	private Map<String, Long> counts = new HashMap<>();
 
+	private Integer run=0;
+
 	public Map<String, Long> getCounts() {
 		return counts;
 	}
@@ -23,4 +25,11 @@ public class ServiceAppVO extends ServiceApp {
 		this.setServiceName(app.getServiceName());
 	}
 
+	public Integer getRun() {
+		return run;
+	}
+
+	public void setRun(Integer run) {
+		this.run = run;
+	}
 }

@@ -63,7 +63,7 @@ public class WechatController {
     //============================================================
     @ApiOperation(value = "获取每种消息类型的条数", tags = {""})
     @GetMapping("/counts")
-    public Object getMsgCountOfWechat() {
+    public Map<String, Long> getMsgCountOfWechat() {
 
         Map<String, Long> countMap = new HashMap<>();
         Map<String, Object> params = new HashMap<>();

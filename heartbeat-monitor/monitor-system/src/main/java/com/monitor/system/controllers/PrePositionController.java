@@ -105,7 +105,7 @@ public class PrePositionController {
 
     })
     @GetMapping("/preposition/counts")
-    public Object getMsgCountOfPreposition(String prepositionId) {
+    public Map<String, Long> getMsgCountOfPreposition(String prepositionId) {
 
         Map<String, Long> countMap = new HashMap<>();
         Map<String, Object> params = new HashMap<>();

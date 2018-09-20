@@ -28,7 +28,7 @@ public class ExceptionUser implements Serializable {
     private String  exceptionType; // 异常类型
 
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String flag; // 系统标识
 
     @Column(nullable = true)

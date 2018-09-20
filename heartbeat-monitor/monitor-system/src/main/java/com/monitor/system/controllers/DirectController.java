@@ -82,7 +82,7 @@ public class DirectController {
     // ===============================================================
     @ApiOperation(value = "获取每种消息类型的条数", tags = {""})
     @GetMapping("/counts")
-    public Object getMsgCountOfDirect() {
+    public Map<String, Long> getMsgCountOfDirect() {
 
         Map<String, Long> countMap = new HashMap<>();
         Map<String, Object> params = new HashMap<>();

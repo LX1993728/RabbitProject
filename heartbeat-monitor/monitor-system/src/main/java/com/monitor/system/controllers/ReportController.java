@@ -66,7 +66,7 @@ public class ReportController {
     //==================================================================
     @ApiOperation(value = "获取每种消息类型的条数", tags = {""})
     @GetMapping("/report/counts")
-    public Object getMsgCountOfReport() {
+    public Map<String, Long> getMsgCountOfReport() {
 
         Map<String, Long> countMap = new HashMap<>();
         Map<String, Object> params = new HashMap<>();

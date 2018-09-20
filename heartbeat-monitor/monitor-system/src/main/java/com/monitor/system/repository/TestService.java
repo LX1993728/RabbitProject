@@ -1,8 +1,6 @@
 package com.monitor.system.repository;
 
-import com.monitor.system.entity.WeChatMsgInfo;
-import com.monitor.system.entity.WeChatSendAppeal;
-import com.monitor.system.entity.WeChatSendReport;
+import com.monitor.system.entity.*;
 import com.monitor.system.vo.ChartVO;
 import com.monitor.system.vo.PageVO;
 import org.slf4j.Logger;
@@ -33,14 +31,16 @@ public class TestService {
     private WrapperService wrapperService;
 
     public void testInsert() {
-        for (int i = 0; i < 84; i++) {
+        for (int i = 0; i < 34; i++) {
             WeChatSendAppeal appeal = new WeChatSendAppeal();
             appeal.setAppealId("AppelId1");
             appeal.setReceiveIp("192.168.1.111");
+            appeal.setSendIp("192.178.1.222");
             appeal.setSuccess(true);
             WeChatSendAppeal appeal2 = new WeChatSendAppeal();
             appeal2.setAppealId("AppelId2");
             appeal2.setReceiveIp("192.168.1.111");
+            appeal2.setSendIp("199.188.111");
             appeal2.setSuccess(false);
             WeChatSendAppeal appeal3 = new WeChatSendAppeal();
             appeal3.setAppealId("AppelId1");
@@ -54,6 +54,20 @@ public class TestService {
             em.persist(appeal2);
             em.persist(appeal3);
             em.persist(report);
+
+            // 前置
+            PreSendReport preSendReport = new PreSendReport();
+            PreSendExecution preSendExecution = new PreSendExecution();
+            PreReceiveInstruction preReceiveInstruction = new PreReceiveInstruction();
+
+
+            // 接报
+
+            // 指挥
+
+            // 网格员
+
+
         }
     }
 

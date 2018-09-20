@@ -32,7 +32,7 @@ public class PreMsgInfo implements Serializable {
     private String receiveIp; //接收IP
 
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String prepositionId; // 此处处理的是部委前置的信息，此字段值用不为null
 
 

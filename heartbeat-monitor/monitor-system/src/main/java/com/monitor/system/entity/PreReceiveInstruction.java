@@ -19,7 +19,7 @@ public class PreReceiveInstruction extends PreMsgInfo {
     @Column
     private String eventId; // 事件ID
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String instructionId;// 指令ID
 
     @Column

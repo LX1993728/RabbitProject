@@ -31,7 +31,7 @@ public class FaultWaring implements Serializable {
     private String warningContent; //预警内容
 
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String flag; // 系统标识
 
     @Column(nullable = true)

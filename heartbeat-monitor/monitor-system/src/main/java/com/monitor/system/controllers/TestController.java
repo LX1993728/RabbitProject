@@ -18,6 +18,11 @@ public class TestController {
         testService.testInsert();
         return "success";
     }
+    @GetMapping("/add2")
+    public Object addTest2() {
+        testService.testInsert2();
+        return "success";
+    }
 
     @GetMapping("/query")
     public Object queryTest() {

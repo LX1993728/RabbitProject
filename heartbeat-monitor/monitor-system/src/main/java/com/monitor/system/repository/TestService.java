@@ -183,17 +183,34 @@ public class TestService {
             em.persist(gridManSendTask);
 
             FaultWaring faultWaring = new FaultWaring();
-            faultWaring.setFlag(MonitorFlags.PREPOSITION_FLAG);
-            faultWaring.setPrepositionId("POLICE");
             faultWaring.setWarnBeginTime(new Date());
             faultWaring.setWarningContent("异常内容XXXXX"+new Date());
             faultWaring.setWarnIp("192.123.123");
             ExceptionUser exceptionUser = new ExceptionUser();
-            exceptionUser.setFlag(MonitorFlags.PREPOSITION_FLAG);
-            exceptionUser.setPrepositionId("POLICE");
             exceptionUser.setExceptionType("密码错误");
             exceptionUser.setIp("192.167.1.233");
             exceptionUser.setUserName("zhansgan");
+            if (i > 0 && i<10){
+                exceptionUser.setFlag(MonitorFlags.PREPOSITION_FLAG);
+                exceptionUser.setPrepositionId("POLICE");
+                faultWaring.setFlag(MonitorFlags.PREPOSITION_FLAG);
+                faultWaring.setPrepositionId("POLICE");
+            }else if (i >=10 && i< 20){
+                exceptionUser.setFlag(MonitorFlags.DIRECT_FLAG);
+                faultWaring.setFlag(MonitorFlags.DIRECT_FLAG);
+            }else if (i >=20 && i<30){
+                exceptionUser.setFlag(MonitorFlags.GRIDMAN_FLAG);
+                faultWaring.setFlag(MonitorFlags.GRIDMAN_FLAG);
+            }else if (i >=30 && i<40){
+                exceptionUser.setFlag(MonitorFlags.WECHAT_FLAG);
+                faultWaring.setFlag(MonitorFlags.WECHAT_FLAG);
+            }else if (i >=40 && i<50){
+                exceptionUser.setFlag(MonitorFlags.REPORTING_FLAG);
+                faultWaring.setFlag(MonitorFlags.REPORTING_FLAG);
+            }else{
+                exceptionUser.setFlag(MonitorFlags.GRIDMAN_FLAG);
+                faultWaring.setFlag(MonitorFlags.GRIDMAN_FLAG);
+            }
             em.persist(faultWaring);
             em.persist(exceptionUser);
 

@@ -75,15 +75,27 @@ public class CommonController {
         }
 
         if (type == 0) {
-            return em.createQuery("SELECT  a FROM ExceptionUser a WHERE a.flag=:flag AND a.prepositionId=:prepositionId")
-                    .setParameter("prepositionId", prepositionId)
-                    .setParameter("flag", flag)
-                    .getResultList();
+            if (flag.equals(MonitorFlags.PREPOSITION_FLAG)){
+                return em.createQuery("SELECT  a FROM ExceptionUser a WHERE a.flag=:flag AND a.prepositionId=:prepositionId")
+                        .setParameter("prepositionId", prepositionId)
+                        .setParameter("flag", flag)
+                        .getResultList();
+            }else {
+                return em.createQuery("SELECT  a FROM ExceptionUser a WHERE a.flag=:flag ")
+                        .setParameter("flag", flag)
+                        .getResultList();
+            }
         } else if (type == 1) {
-            return em.createQuery("SELECT  a FROM FaultWaring a WHERE a.flag=:flag AND a.prepositionId=:prepositionId")
-                    .setParameter("prepositionId", prepositionId)
-                    .setParameter("flag", flag)
-                    .getResultList();
+            if (flag.equals(MonitorFlags.PREPOSITION_FLAG)){
+                return em.createQuery("SELECT  a FROM FaultWaring a WHERE a.flag=:flag AND a.prepositionId=:prepositionId")
+                        .setParameter("prepositionId", prepositionId)
+                        .setParameter("flag", flag)
+                        .getResultList();
+            }else {
+                return em.createQuery("SELECT  a FROM FaultWaring a WHERE a.flag=:flag")
+                        .setParameter("flag", flag)
+                        .getResultList();
+            }
         }
         return null;
     }

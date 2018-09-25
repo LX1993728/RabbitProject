@@ -3,6 +3,7 @@ package com.monitor.system.controllers;
 import com.monitor.system.entity.*;
 import com.monitor.system.repository.GeneralService;
 import com.monitor.system.repository.WrapperService;
+import com.monitor.system.vo.ChartVO;
 import com.monitor.system.vo.ErrorVO;
 import com.monitor.system.vo.PageVO;
 import io.swagger.annotations.Api;
@@ -101,7 +102,7 @@ public class DirectController {
 
     })
     @GetMapping("/event/count")
-    public Object getEventCountOfDirect(Boolean isResolved) {
+    public ChartVO getEventCountOfDirect(Boolean isResolved) {
 
         Map<String, Object> params = new HashMap<>();
         if (isResolved != null) {
@@ -115,7 +116,7 @@ public class DirectController {
             @ApiImplicitParam(name = "isSuccess", value = "是否成功", required = false, paramType = "query", dataType = "Boolean")
     })
     @GetMapping("/instruction/count")
-    public Object getInstructionCountOfDirect(Boolean isSuccess) {
+    public ChartVO getInstructionCountOfDirect(Boolean isSuccess) {
         Map<String, Object> params = new HashMap<>();
         if (isSuccess != null) {
             params.put("isSuccess", isSuccess);
@@ -125,7 +126,7 @@ public class DirectController {
 
     @ApiOperation(value = "图表- 接收反馈统计", tags = {""})
     @GetMapping("/report/count")
-    public Object getExecutionCountOfDirect() {
+    public ChartVO getExecutionCountOfDirect() {
 
         Map<String, Object> params = new HashMap<>();
         return wrapperService.getChartDataByCriteria(DirectMsgInfo.class, DirectReceiveExecution.class, params, "receiveTime");

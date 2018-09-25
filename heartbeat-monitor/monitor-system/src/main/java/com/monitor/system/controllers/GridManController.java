@@ -3,6 +3,7 @@ package com.monitor.system.controllers;
 import com.monitor.system.entity.*;
 import com.monitor.system.repository.GeneralService;
 import com.monitor.system.repository.WrapperService;
+import com.monitor.system.vo.ChartVO;
 import com.monitor.system.vo.ErrorVO;
 import com.monitor.system.vo.PageVO;
 import io.swagger.annotations.Api;
@@ -133,7 +134,7 @@ public class GridManController {
 
     })
     @GetMapping("/instruction/count")
-    public Object getMsgCountOfInstruction(Boolean isResolved) {
+    public ChartVO getMsgCountOfInstruction(Boolean isResolved) {
 
         Map<String, Object> params = new HashMap<>();
         if (isResolved != null) {
@@ -148,7 +149,7 @@ public class GridManController {
 
     })
     @GetMapping("/execution/count")
-    public Object getExecutionsOfGridMan(Boolean isSuccess) {
+    public ChartVO getExecutionsOfGridMan(Boolean isSuccess) {
 
         Map<String, Object> params = new HashMap<>();
         if (isSuccess != null) {
@@ -163,7 +164,7 @@ public class GridManController {
 
     })
     @GetMapping("/receivetask/count")
-    public Object getReceiveTaskOfGridMan(Boolean isResolved) {
+    public ChartVO getReceiveTaskOfGridMan(Boolean isResolved) {
 
         Map<String, Object> params = new HashMap<>();
         if (isResolved != null) {
@@ -179,7 +180,7 @@ public class GridManController {
     })
 
     @GetMapping("/sendtask/count")
-    public Object getSendTaskOfGridMan(Boolean isSuccess) {
+    public ChartVO getSendTaskOfGridMan(Boolean isSuccess) {
 
         Map<String, Object> params = new HashMap<>();
         if (isSuccess != null) {
@@ -195,7 +196,7 @@ public class GridManController {
     })
 
     @GetMapping("/sendreport/count")
-    public Object getSendReportOfGridMan(Boolean isSuccess) {
+    public ChartVO getSendReportOfGridMan(Boolean isSuccess) {
 
         Map<String, Object> params = new HashMap<>();
         if (isSuccess != null) {

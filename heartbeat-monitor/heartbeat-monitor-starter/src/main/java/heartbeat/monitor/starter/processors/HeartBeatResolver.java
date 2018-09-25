@@ -30,7 +30,7 @@ public class HeartBeatResolver {
         Map<String, ServiceApp> preAppsMap = new HashMap<>(); // entry<id,app>
         Map<String, ServiceApp> otherAppsMap = new HashMap<>(); // entry<flag,app>
 
-        long minTime = System.currentTimeMillis() - 15 * 1000; // 统计周期是15秒
+        long minTime = System.currentTimeMillis() - 30 * 1000; // 统计周期是15秒
         for (Entry<String, Metrics> entry : preInfos.entrySet()) {
             final String key = entry.getKey();
             final Metrics metrics = entry.getValue();

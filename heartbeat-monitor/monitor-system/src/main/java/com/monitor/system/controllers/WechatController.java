@@ -3,6 +3,7 @@ package com.monitor.system.controllers;
 import com.monitor.system.entity.*;
 import com.monitor.system.repository.GeneralService;
 import com.monitor.system.repository.WrapperService;
+import com.monitor.system.vo.ChartVO;
 import com.monitor.system.vo.PageVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -79,7 +80,7 @@ public class WechatController {
             @ApiImplicitParam(name = "isSuccess", value = "是否成功", required = false, paramType = "query", dataType = "Boolean")
     })
     @GetMapping("/report/count")
-    public Object getReportCountOfWechat(Boolean isSuccess) {
+    public ChartVO getReportCountOfWechat(Boolean isSuccess) {
         Map<String, Object> params = new HashMap<>();
         if (isSuccess != null) {
             params.put("isSuccess", isSuccess);
@@ -92,7 +93,7 @@ public class WechatController {
             @ApiImplicitParam(name = "isSuccess", value = "是否成功", required = false, paramType = "query", dataType = "Boolean")
     })
     @GetMapping("/appeal/count")
-    public Object getAppealCountOfWechat(Boolean isSuccess) {
+    public ChartVO getAppealCountOfWechat(Boolean isSuccess) {
         Map<String, Object> params = new HashMap<>();
         if (isSuccess != null) {
             params.put("isSuccess", isSuccess);

@@ -3,6 +3,7 @@ package com.monitor.system.controllers;
 import com.monitor.system.entity.*;
 import com.monitor.system.repository.GeneralService;
 import com.monitor.system.repository.WrapperService;
+import com.monitor.system.vo.ChartVO;
 import com.monitor.system.vo.ErrorVO;
 import com.monitor.system.vo.PageVO;
 import io.swagger.annotations.Api;
@@ -84,7 +85,7 @@ public class ReportController {
 
     })
     @GetMapping("/msg/count")
-    public Object getMsgCountOfMsg(Boolean isResolved) {
+    public ChartVO getMsgCountOfMsg(Boolean isResolved) {
         Map<String, Object> params = new HashMap<>();
         if (isResolved != null) {
             params.put("isResolved", isResolved);
@@ -98,7 +99,7 @@ public class ReportController {
 
     })
     @GetMapping("/event/count")
-    public Object getEventCountOfReport(Boolean isSuccess) {
+    public ChartVO getEventCountOfReport(Boolean isSuccess) {
         Map<String, Object> params = new HashMap<>();
         if (isSuccess != null) {
             params.put("isSuccess", isSuccess);

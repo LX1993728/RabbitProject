@@ -6,6 +6,7 @@ import com.monitor.system.entity.PreSendExecution;
 import com.monitor.system.entity.PreSendReport;
 import com.monitor.system.repository.GeneralService;
 import com.monitor.system.repository.WrapperService;
+import com.monitor.system.vo.ChartVO;
 import com.monitor.system.vo.ErrorVO;
 import com.monitor.system.vo.PageVO;
 import io.swagger.annotations.Api;
@@ -126,11 +127,11 @@ public class PrePositionController {
 
     })
     @GetMapping("/instruction/count")
-    public Object getMsgCountOfInstruction(String prepositionId,Boolean isResolved) {
+    public ChartVO getMsgCountOfInstruction(String prepositionId, Boolean isResolved) {
 
-        if (prepositionId == null ){
-            return new ErrorVO("prepositionId不能为空");
-        }
+//        if (prepositionId == null ){
+//            return new ErrorVO("prepositionId不能为空");
+//        }
         Map<String, Object> params = new HashMap<>();
         if (isResolved != null) {
             params.put("isResolved", isResolved);
@@ -149,11 +150,11 @@ public class PrePositionController {
 
     })
     @GetMapping("/execution/count")
-    public Object getMsgCountOfExecution(String prepositionId,Boolean isSuccess) {
+    public ChartVO getMsgCountOfExecution(String prepositionId,Boolean isSuccess) {
 
-        if (prepositionId == null ){
-            return new ErrorVO("prepositionId不能为空");
-        }
+//        if (prepositionId == null ){
+//            return new ErrorVO("prepositionId不能为空");
+//        }
         Map<String, Object> params = new HashMap<>();
         if (isSuccess != null) {
             params.put("isSuccess", isSuccess);
@@ -171,11 +172,11 @@ public class PrePositionController {
 
     })
     @GetMapping("/report/count")
-    public Object getMsgCountOfReport(String prepositionId,Boolean isSuccess) {
+    public ChartVO getMsgCountOfReport(String prepositionId,Boolean isSuccess) {
 
-        if (prepositionId == null ){
-            return new ErrorVO("prepositionId不能为空");
-        }
+//        if (prepositionId == null ){
+//            return new ErrorVO("prepositionId不能为空");
+//        }
         Map<String, Object> params = new HashMap<>();
         if (isSuccess != null) {
             params.put("isSuccess", isSuccess);
@@ -185,5 +186,7 @@ public class PrePositionController {
         }
         return wrapperService.getChartDataByCriteria(PreMsgInfo.class,PreSendReport.class,params,"sendTime");
     }
+
+
 
 }

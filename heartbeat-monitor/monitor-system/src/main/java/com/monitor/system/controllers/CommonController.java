@@ -3,6 +3,7 @@ package com.monitor.system.controllers;
 import com.monitor.system.config.MonitorSystemInfo;
 import com.monitor.system.repository.GeneralService;
 import com.monitor.system.repository.WrapperService;
+import com.monitor.system.vo.ChartVO;
 import com.monitor.system.vo.ErrorVO;
 import com.monitor.system.vo.ServiceAppVO;
 
@@ -193,5 +194,106 @@ public class CommonController {
         return resultMap;
     }
 
+    @ApiOperation(value = "获取所有服务的图表信息", tags = {""})
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "flag", value = "服务的标识", required = true, paramType = "query", dataType = "String"),
+            @ApiImplicitParam(name = "prepositionId", value = "部委前置的ID标识", required = false, paramType = "query", dataType = "String")
+    })
+    @GetMapping("/chart")
+    public Object getChartData(String flag, String prepositionId) {
+        if (flag == null) {
+            return new ErrorVO("flag不能为null");
+        }
+        if (flag.equals(MonitorFlags.PREPOSITION_FLAG) && prepositionId == null) {
+            return new ErrorVO("前置系统prepositionId不能为null");
+        }
 
+        Map<String, Object> resultMap = new HashMap<>();
+
+        if (flag.equals(MonitorFlags.PREPOSITION_FLAG)) {
+            ChartVO executionTrue = prePositionController.getMsgCountOfExecution(prepositionId, true);
+            ChartVO executionFalse = prePositionController.getMsgCountOfExecution(prepositionId, false);
+            ChartVO instructionTrue = prePositionController.getMsgCountOfInstruction(prepositionId, true);
+            ChartVO instructionFalse = prePositionController.getMsgCountOfInstruction(prepositionId, false);
+            ChartVO reportTrue = prePositionController.getMsgCountOfReport(prepositionId, true);
+            ChartVO reportFalse = prePositionController.getMsgCountOfReport(prepositionId, true);
+
+            resultMap.put("timeList", executionTrue.getTimesList());
+
+            resultMap.put("executionTrue", executionTrue.getCountList());
+            resultMap.put("executionFalse", executionFalse.getCountList());
+            resultMap.put("instructionTrue", instructionTrue.getCountList());
+            resultMap.put("instructionFalse", instructionFalse.getCountList());
+            resultMap.put("reportTrue", reportTrue.getCountList());
+            resultMap.put("reportFalse", reportFalse.getCountList());
+        }else if (flag.equals(MonitorFlags.REPORTING_FLAG)){
+            ChartVO eventTrue = reportController.getEventCountOfReport(true);
+            ChartVO eventFalse = reportController.getEventCountOfReport(false);
+            ChartVO msgTrue = reportController.getMsgCountOfMsg(true);
+            ChartVO msgFalse = reportController.getMsgCountOfMsg(false);
+
+            resultMap.put("timeList",eventTrue.getTimesList());
+
+            resultMap.put("eventTrue",eventTrue.getCountList());
+            resultMap.put("eventFalse",eventFalse.getCountList());
+            resultMap.put("msgTrue",msgTrue.getCountList());
+            resultMap.put("msgFalse",msgFalse.getCountList());
+
+        }else if(flag.equals(MonitorFlags.DIRECT_FLAG)){
+            ChartVO eventTrue = directController.getEventCountOfDirect(true);
+            ChartVO eventFalse = directController.getEventCountOfDirect(false);
+            ChartVO execution = directController.getExecutionCountOfDirect();
+            ChartVO instructionTrue = directController.getInstructionCountOfDirect(true);
+            ChartVO instructionFalse = directController.getInstructionCountOfDirect(false);
+
+            resultMap.put("timeList",eventTrue.getTimesList());
+
+            resultMap.put("eventTrue",eventTrue.getCountList());
+            resultMap.put("eventFalse",eventFalse.getCountList());
+            resultMap.put("execution",execution.getCountList());
+            resultMap.put("instructionTrue",instructionTrue.getCountList());
+            resultMap.put("instructionFalse",instructionFalse.getCountList());
+
+        }else if (flag.equals(MonitorFlags.GRIDMAN_FLAG)){
+            ChartVO executionTrue = gridManController.getExecutionsOfGridMan(true);
+            ChartVO executionFalse = gridManController.getExecutionsOfGridMan(false);
+            ChartVO instructionTrue = gridManController.getMsgCountOfInstruction(true);
+            ChartVO instructionFalse = gridManController.getMsgCountOfInstruction(false);
+            ChartVO receiveTaskTrue = gridManController.getReceiveTaskOfGridMan(true);
+            ChartVO receiveTaskFalse = gridManController.getReceiveTaskOfGridMan(false);
+            ChartVO sendTaskTrue = gridManController.getSendTaskOfGridMan(true);
+            ChartVO sendTaskFalse = gridManController.getSendTaskOfGridMan(false);
+            ChartVO reportTrue = gridManController.getSendReportOfGridMan(true);
+            ChartVO reportFalse = gridManController.getSendReportOfGridMan(false);
+
+            resultMap.put("timeList",executionTrue.getTimesList());
+
+            resultMap.put("executionTrue",executionTrue.getCountList());
+            resultMap.put("executionFalse",executionFalse.getCountList());
+            resultMap.put("instructionTrue",instructionTrue.getCountList());
+            resultMap.put("instructionFalse",instructionFalse.getCountList());
+            resultMap.put("receiveTaskTrue",receiveTaskTrue.getCountList());
+            resultMap.put("receiveTaskFalse",receiveTaskFalse.getCountList());
+            resultMap.put("sendTaskTrue",sendTaskTrue.getCountList());
+            resultMap.put("sendTaskFalse",sendTaskFalse.getCountList());
+            resultMap.put("reportTrue",reportTrue.getCountList());
+            resultMap.put("reportFalse",reportFalse.getCountList());
+
+        }else if (flag.equals(MonitorFlags.WECHAT_FLAG)){
+            ChartVO appealTrue = wechatController.getAppealCountOfWechat(true);
+            ChartVO appealFalse = wechatController.getAppealCountOfWechat(false);
+            ChartVO reportTrue = wechatController.getReportCountOfWechat(true);
+            ChartVO reportFalse = wechatController.getReportCountOfWechat(false);
+
+            resultMap.put("timeList",appealTrue.getTimesList());
+
+            resultMap.put("appealTrue",appealTrue.getCountList());
+            resultMap.put("appealFalse",appealFalse.getCountList());
+            resultMap.put("reportTrue",reportTrue.getCountList());
+            resultMap.put("reportFalse",reportFalse.getCountList());
+        }else{
+            return "flag error";
+        }
+        return resultMap;
+    }
 }

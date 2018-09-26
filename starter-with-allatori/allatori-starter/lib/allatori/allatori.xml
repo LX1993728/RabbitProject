@@ -1,0 +1,22 @@
+<!--Download url: http://www.allatori.com/-->
+<!--  -obfuscated  -->
+<config>
+    <input>
+        <jar in="allatori-starter-0.0.1-SNAPSHOT.jar" out="allatori-starter-0.0.1-SNAPSHOT.jar"/>
+    </input>
+    <keep-names>
+        <class access="protected+">
+            <field access="protected+"/>
+            <method access="protected+"/>
+        </class>
+    </keep-names>
+
+    <!--使用水印-->
+    <watermark key="secure-key-to-extract-watermark" value="Customer: liuxun"/>
+
+    <!--添加日志-->
+    <property name="log-file" value="log.xml"/>
+    <!--设置过期时间-->
+    <expiry date="2019/08/01" string="EXPIRED!"/>
+
+</config>

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>heartbeat.monitor</groupId>
-    <artifactId>heartbeat-monitor-starter</artifactId>
+    <artifactId>heartbeat-monitor-starter-XXX</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -29,6 +29,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
+            <scope>compile</scope>
         </dependency>
 
         <!--添加ali fastjson-->
@@ -36,6 +37,7 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.46</version>
+            <scope>compile</scope>
         </dependency>
 
         <!-- 打包starter使用 @ConfigurationProperties annotation processing (metadata for IDEs)
@@ -43,7 +45,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
+            <optional>false</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -84,4 +86,5 @@
             <url>http://192.168.1.155:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
+
 </project>

@@ -4,6 +4,7 @@ import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.TopicExchange;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -47,7 +48,7 @@ public class MonitorConfig {
 
     @Bean
     @ConditionalOnProperty(prefix = "projects.system",value = "flag", havingValue = MonitorGlobalInfo.MONITOR_FLAG)
-    public Binding bindingHeartBeatExchange(TopicExchange monitorGlobalExchange, Queue acceptHeartQueue){
+    public Binding bindingHeartBeatExchange( @Qualifier("monitorGlobalExchange") TopicExchange monitorGlobalExchange, @Qualifier("acceptHeartQueue")Queue acceptHeartQueue){
         return BindingBuilder.bind(acceptHeartQueue).to(monitorGlobalExchange).with("#");
     }
 
@@ -67,7 +68,7 @@ public class MonitorConfig {
 
     @Bean
     @ConditionalOnProperty(prefix = "projects.system",value = "flag", havingValue = MonitorGlobalInfo.MONITOR_FLAG)
-    public Binding bindingGInstructionToExchange(TopicExchange monitorBusinessExchange, Queue acceptBusinessQueue){
+    public Binding bindingGInstructionToExchange( @Qualifier("monitorBusinessExchange")TopicExchange monitorBusinessExchange, @Qualifier("acceptBusinessQueue")Queue acceptBusinessQueue){
         return BindingBuilder.bind(acceptBusinessQueue).to(monitorBusinessExchange).with("#");
     }
 

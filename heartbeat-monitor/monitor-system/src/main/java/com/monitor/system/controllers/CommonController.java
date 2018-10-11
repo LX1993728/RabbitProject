@@ -110,7 +110,7 @@ public class CommonController {
         if (flag == null) {
             return new ErrorVO("flag参数不能为空");
         }
-        String key = flag + (prepositionId == null ? "" : "_" + prepositionId);
+        String key = flag + (prepositionId == null ? "" : (flag.equals(MonitorFlags.PREPOSITION_FLAG)?"_" + prepositionId:""));
         UserCount userCount = MonitorSystemInfo.IN_OUT_LINE_USER_MAP.get(key);
         if (userCount == null) {
             userCount = new UserCount();

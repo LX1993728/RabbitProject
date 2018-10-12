@@ -49,7 +49,7 @@ public class LoginController {
     }
 
     @ApiOperation(value = "login", tags = {""})
-    @PostMapping("/login")
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
     public Object login(@RequestBody User user,HttpSession session){
         Map<String,Object> resultMap = new HashMap<>();
         if (user.getUsername() == null || user.getUsername().trim().length() == 0){

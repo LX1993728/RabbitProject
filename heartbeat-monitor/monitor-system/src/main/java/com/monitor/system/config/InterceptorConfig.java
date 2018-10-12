@@ -30,11 +30,13 @@ public class InterceptorConfig  implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
 
         log.info("---------------------开始进入请求地址拦截----------------------------");
+        log.info(httpServletRequest.getRequestURI());
+        log.info(httpServletRequest.getRequestURL().toString());
+
         HttpSession session = httpServletRequest.getSession();
         if(session.getAttribute("user") != null){
             return true;
-        }
-        else{
+        } else{
             PrintWriter printWriter = httpServletResponse.getWriter();
             printWriter.write("{message:\" require login! \"}");
             httpServletResponse.setStatus(401);

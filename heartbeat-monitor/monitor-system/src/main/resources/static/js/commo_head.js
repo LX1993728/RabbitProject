@@ -18,7 +18,7 @@ $(function() {
 	// 头部用户信息显示
 	if (localStorage.userInfo) {
 		var userInfo = JSON.parse(localStorage.userInfo)
-		$('.user_info p').eq(0).html(userInfo.name)
+		$('.user_info p').eq(0).html(userInfo.username)
 	}
 	var time = setInterval(function(){
 		getTimes()
@@ -32,7 +32,6 @@ $(function() {
 			
 					window.location.href = './login.html'
 					localStorage.userInfo = ''
-				
 			}
 		})
 	})

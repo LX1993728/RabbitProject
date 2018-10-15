@@ -1,0 +1,98 @@
+.login_conainer {
+  width: 1920px;
+  height: 1080px;
+  background: url(../images/login_bg.png) no-repeat;
+  background-size: cover;
+}
+.login_conainer .login_title {
+  padding-top: 160px;
+}
+.login_conainer .login_title p {
+  text-align: center;
+  font-size: 78px;
+  font-weight: bold;
+  line-height: 82px;
+  letter-spacing: 10px;
+  background-image: -webkit-linear-gradient(bottom, #0464d0, #2c90ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: rgba(0, 22, 75, 0.1) 2px 8px 4px;
+}
+.login_conainer .main_con {
+  width: 580px;
+  box-sizing: border-box;
+  background: #fff;
+  margin: 100px auto 0;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px 10px rgba(0, 55, 110, 0.05);
+  padding: 40px 75px;
+}
+.login_conainer .main_con .title {
+  font-size: 28px;
+  color: #0068d3;
+  line-height: 28px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.login_conainer .main_con .item {
+  margin-bottom: 36px;
+  position: relative;
+}
+.login_conainer .main_con .item label {
+  font-size: 20px;
+  display: block;
+  width: 80px;
+  line-height: 50px;
+}
+.login_conainer .main_con .item em {
+  display: block;
+  position: absolute;
+  width: 22px;
+  height: 24px;
+  background: url(../images/user_login.png) no-repeat;
+  background-size: cover;
+  left: 90px;
+  top: 13px;
+}
+.login_conainer .main_con .item .error {
+  font-size: 14px;
+  color: red;
+  padding-left: 90px;
+  line-height: 36px;
+}
+.login_conainer .main_con .item input {
+  width: 350px;
+  height: 50px;
+  box-sizing: border-box;
+  border: 1px solid #bbc8d4;
+  border-radius: 6px;
+  padding-left: 40px;
+}
+.login_conainer .main_con .password em {
+  width: 20px;
+  background-image: url(../images/password_login.png);
+}
+.login_conainer .main_con .login_btn {
+  width: 430px;
+  height: 44px;
+  background: url(../images/login_btn.png) no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  font-size: 20px;
+  color: #fff;
+  line-height: 44px;
+}
+.login_conainer .main_con .isremember {
+  padding-top: 20px;
+  text-align: right;
+}
+.login_conainer .main_con .isremember input {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.login_conainer .main_con .isremember span {
+  color: #000000;
+  line-height: 22px;
+}

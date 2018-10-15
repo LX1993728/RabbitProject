@@ -1,0 +1,517 @@
+#city_preposition_Box {
+  height: 1080px;
+  width: 1920px;
+  display: flex;
+  flex-direction: column;
+  background: url('../images/body_bj.png') no-repeat;
+}
+#city_preposition_Box .city_preposition {
+  flex: 1;
+}
+#city_preposition_Box .city_preposition .report_tip {
+  padding: 0 20px;
+  height: 50px;
+}
+#city_preposition_Box .city_preposition .report_tip .tl {
+  color: #cdcdcd;
+  font-size: 16px;
+  height: 50px;
+  line-height: 50px;
+  display: inline-block;
+}
+#city_preposition_Box .city_preposition .report_tip .goback {
+  cursor: pointer;
+  /* background: #ddd; */
+  padding-top: 10px;
+}
+#city_preposition_Box .city_preposition .report_tip .goback i {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background: url('../images/icon_back.png') no-repeat;
+  background-size: 100% 100%;
+  float: left;
+  margin-right: 10px;
+}
+#city_preposition_Box .city_preposition .report_tip .goback span {
+  color: #999999;
+  font-size: 16px;
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  display: inline-block;
+}
+/*内容区域*/
+.prepositionBox{
+  width: 1880px;
+  height: 918px;
+  margin: 10px auto 0px auto;
+/*  background-color: red;*/
+}
+.prepositionBox .prepositionContentBox1{
+  float: left;
+  width: 866px;
+  height: 450px;
+  background:rgba(99,183,255,0.1);
+  margin-left: 0px;
+}
+.prepositionBox .prepositionContentBox1 .Box1_content {
+  height:410px;
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_top {
+  overflow: hidden;
+}
+.prepositionBox .prepositionContentBox1 .Box1_content .ContentBox1_top_left{
+  width:302px;
+  height:230px;
+  margin-left:10px;
+  margin-top: 10px;
+}
+.prepositionBox .prepositionContentBox1 .Box1_content .ContentBox1_bottom{
+  width:845px;
+  margin-left:10px;
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_top_left .runState,.prepositionContentBox1 .Box1_content .ContentBox1_top_right .system_user_state,.prepositionBox .prepositionContentBox1 .Box1_content .ContentBox1_bottom .ContentBox1_bottom_head{
+  border-bottom:1px solid #115e67;
+  border-color: rgba(17,94,103,0.5);
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_top_right .system_user_state {
+  padding-bottom: 4px;
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_top_left .runState span.fl, .prepositionContentBox1 .Box1_content .ContentBox1_top_right .system_user_state span,.ContentBox1_bottom .ContentBox1_bottom_head span {
+  position: relative;
+  top:1px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #0ff;
+}
+.Box1_content .ContentBox1_top_left .runState span:first-child em,.Box1_content .ContentBox1_top_right .system_user_state span em,.ContentBox1_bottom .ContentBox1_bottom_head span em{
+  display: block;
+  border-width:5px;
+  position: absolute;
+  bottom:0px;
+  left:50%;
+  margin-left: -5px;
+  border-style: solid;
+  border-color:transparent transparent #00ffff   transparent;
+}
+.pie{
+  position: relative;
+}
+#pie_chart{
+  width:380px;
+  height:180px;
+  position: absolute;
+  top:0px;
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_top_left .runState span:nth-child(1),.prepositionContentBox1 .Box1_content {
+  font-size: 20px;
+  color: #00fcff;
+  cursor: pointer;
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_top_left .runState .danger_state{
+  display: inline-block;
+  width:80px;
+  height:22px;
+  border: 1px solid #d42816;
+  font-size: 15px;
+  border-radius: 6px;
+  color: #d42816;
+  text-align: center;
+  cursor: pointer;
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_top_left .runState .active {
+  display: inline-block;
+  width:80px;
+  height:22px;
+  border: 1px solid #00fcff;
+  font-size: 15px;
+  border-radius: 6px;
+  color: #00fcff;
+  text-align: center;
+  cursor: pointer;
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_top_left .runState .warning_state {
+  display: inline-block;
+  width:80px;
+  height:22px;
+  border: 1px solid #f0bf12;
+  font-size: 15px;
+  border-radius: 6px;
+  color: #f0bf12;
+  text-align: center;
+  cursor: pointer;
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_top_left .runStateList {
+  margin-top: 10px;
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_top_left .runStateList ul li{
+  width:230px;
+  height:30px;
+  font-size: 14px;
+  line-height: 30px;
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_top_left .runStateList ul li span{
+  color: #fff;
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_top_left .runStateList ul li span:last-child{
+  color: #00fcff;
+  margin-left: 10px;
+  font-weight: bold
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_top_right{
+  width:380px;
+  height: 230px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.Box1_content .ContentBox1_bottom .ContentBox1_bottom_head{
+  height:30px;
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_location ul li {
+  float: left;
+  width:135px;
+  font-size: 14px;
+  width:135px;
+  text-align:center;
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_location ul .location_blue div:nth-child(2) {
+  width: 36px;
+  height:50px;
+  margin:auto;
+  background: url(../images/icon_blue.png);
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_location{
+  padding: 10px 0;
+  height: 118px;
+  overflow-y: auto;
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_location ul li{
+ margin-bottom: 10px;
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_location .location_red{
+  color: #e12b17;
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_location .location_red div:nth-child(2) {
+  width: 36px;
+  height:50px;
+  margin:auto;
+  background: url(../images/icon_bad.png);
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_location .location_yellow{
+  color: #dbae0e;
+}
+.prepositionContentBox1 .Box1_content .ContentBox1_location .location_yellow div:nth-child(2) {
+  width: 36px;
+  height:50px;
+  margin:auto;
+  background: url(../images/icon_xm_yellow.png);
+}
+.prepositionBox .prepositionContentBox2{
+  float: left;
+  width: 1004px;
+  height: 450px;
+  background:rgba(99,183,255,0.1);
+  margin-left: 10px;
+  position: relative;
+}
+.prepositionBox .special{
+  margin-top: -16px;
+}
+/*.prepositionContentBox2 input {
+  position: absolute;
+  top:50px;
+  right:10px;
+  color: #0ff;
+  width:200px;
+  height:38px;
+  border: 1px solid #00fcff;
+  border-radius: 6px;
+  outline: none;
+  background-color: transparent;
+  padding-left: 20px;
+  z-index: 4;
+  cursor: pointer;
+}*/
+
+.prepositionContentBox2 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+  color: #0ff; 
+} 
+
+.prepositionContentBox2 input:-moz-placeholder, textarea:-moz-placeholder { 
+  color: #0ff; 
+} 
+
+.prepositionContentBox2 input::-moz-placeholder, textarea::-moz-placeholder { 
+  color: #0ff;
+} 
+
+.prepositionContentBox2 input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+ color: #0ff;
+}
+.prepositionContentBox2 input+i{
+  width:14px;
+  height:8px;
+  background: url(../images/icon_arrow.png);
+  position: absolute;
+  top:65px;
+  right:30px;
+  z-index: 5
+}
+.prepositionContentBox2 .select_list_option{
+  width:222px;
+  height: 196px;
+  background:rgba(0,174,255,0.2);
+  position: absolute;
+  top:90px;
+  border-radius: 6px;
+  right:10px;
+  z-index: 5;
+  display: none;
+}
+.prepositionContentBox2 .select_list_option li{
+  width:202px;
+  height:28px;
+  line-height: 28px;
+  font-size: 14px;
+  color: #fff;
+  padding-left: 20px;
+}
+.prepositionContentBox2 .select_list_option li:hover {
+  background-color: rgba(0,174,255,0.4);
+  cursor: pointer;
+}
+.prepositionBox .prepositionContentBox3{
+  float: left;
+  width: 866px;
+  height: 460px;
+  background:rgba(99,183,255,0.1);
+  margin: 8px 0px 0px 0px;
+}
+.prepositionBox .prepositionContentBox4{
+  float: left;
+  width: 1004px;
+  height: 460px;
+  background:rgba(99,183,255,0.1);
+  margin: 8px 0px 0px 10px;
+}
+.prepositionBox .Box_head,.prepositionBox .Box2_head,.prepositionBox .Box3_head,.prepositionBox .Box4_head {
+  height:40px;
+  background:rgba(99,183,255,0.3);
+}
+.prepositionBox .Box_head ul li,.prepositionBox .Box2_head ul li,.prepositionBox .Box3_head ul li,.prepositionBox .Box4_head ul li{
+  float: left;
+  font-size: 24px;
+  height:40px;
+  line-height: 40px;
+}
+.prepositionBox .Box_head ul li a,.prepositionBox .Box2_head ul li a,.prepositionBox .Box3_head ul li a,.prepositionBox .Box4_head ul li a{
+  padding: 0 10px;
+  border-right:2px solid #0eb9be;
+}
+.prepositionBox .Box_head ul li:last-child a,.prepositionBox .Box2_head ul li:last-child a,.prepositionBox .Box3_head ul li:last-child a,.prepositionBox .Box4_head ul li:last-child a{
+  border-right:none;
+}
+.prepositionContentBox3 table {
+  width:845px;
+  border:1px solid #0a5c63;
+  margin:auto; 
+  color: #fff;
+}
+.addBorder{
+  border-bottom: 1px solid #00fcff;
+}
+.prepositionBox .Box3_head ul li a.fontColor,.prepositionBox .Box4_head ul li .fontColor{
+  color: #00fcff;
+}
+.prepositionContentBox3 div.junScrollBar{
+  margin-top: 20px;
+  width:866px;
+  height:344px;
+  overflow-x: auto;
+}
+.prepositionContentBox3 table tr{
+  height:49px;
+}
+.prepositionContentBox3 table td {
+  border:1px solid #0a5c63;
+  font-size: 16px;
+}
+.prepositionContentBox3 table thead tr:first-child{
+  color: #00fcff;
+  font-weight:520;
+  font-size: 18px;
+}
+.prepositionContentBox3 table thead tr:first-child td{
+  font-size: 18px;
+}
+.prepositionContentBox3 table thead tr td:first-child{
+  width:160px;
+}
+.prepositionContentBox3 table thead tr td:last-child{
+  width:520px;
+}
+.prepositionBox .Box_head ul li a,.prepositionBox .Box2_head ul li a{
+  color: #00fcff;
+}
+.prepositionBox .Box3_head ul li a,.prepositionBox .Box4_head ul li a {
+  color:#0eb9be;
+}
+.prepositionContentBox4 ul li{
+  float: left;
+}
+.prepositionContentBox4 .select_list {
+  margin-top: 1px;
+  height:50px;
+}
+.select-tag-input + label{
+  border:1px solid #00fcff;
+  padding: 9px;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  margin-top: 12px;
+}
+/*.select-tag-input:checked + label {
+  background:rgba(99,183,255,0.3);
+}*/
+.select-tag-input:checked + label:after {
+  content: '\2714';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #00fcff;
+  width: 100%;
+  text-align: center;
+  padding: 1px 0 0 0;
+  vertical-align: text-top;
+}
+.prepositionContentBox4 .select_list ul li{
+  margin-left: 20px;
+}
+.prepositionContentBox4 .select_list ul li span{
+  color: #fff;
+  font-size: 18px;
+  position: relative;
+  top:-3px;
+}
+.prepositionContentBox4 .Box4_content .receive_instruction,
+.prepositionContentBox4 .Box4_content .send_answer,
+.prepositionContentBox4 .Box4_content .send_book,
+.prepositionContentBox4 .Box4_content .rec_mes,
+.prepositionContentBox4 .Box4_content  .send_event,
+.prepositionContentBox4 .Box4_content  .send_topbook,
+.prepositionContentBox4 .Box4_content .send_topqes,
+.prepositionContentBox4 .Box4_content .gird_receive_instruction,
+.prepositionContentBox4 .Box4_content .gird_send_feedback,
+.prepositionContentBox4 .Box4_content .gird_receive_tasks,
+.prepositionContentBox4 .Box4_content .gird_send_tasks,
+.prepositionContentBox4 .Box4_content .gird_send_book,
+.prepositionContentBox4 .Box4_content .send_instruction,
+ .prepositionContentBox4 .Box4_content .receive_event,
+ .prepositionContentBox4 .Box4_content .receive_ans{
+  width:1004px;
+  height:305px;
+  max-height: 305px;
+  overflow-x: auto;
+}
+.prepositionContentBox4 .Box4_content .receive_instruction td,
+.prepositionContentBox4 .Box4_content .send_answer td,
+.prepositionContentBox4 .Box4_content .send_book td,
+.prepositionContentBox4 .Box4_content .rec_mes td,
+.prepositionContentBox4 .Box4_content  .send_event td,
+.prepositionContentBox4 .Box4_content  .send_topbook td,
+.prepositionContentBox4 .Box4_content .send_topqes td,
+.prepositionContentBox4 .Box4_content .gird_receive_instruction td,
+.prepositionContentBox4 .Box4_content .gird_send_feedback td,
+.prepositionContentBox4 .Box4_content .gird_receive_tasks td,
+.prepositionContentBox4 .Box4_content .gird_send_tasks td,
+.prepositionContentBox4 .Box4_content .gird_send_book td,
+.prepositionContentBox4 .Box4_content .send_instruction td,
+ .prepositionContentBox4 .Box4_content .receive_event td,
+ .prepositionContentBox4 .Box4_content .receive_ans td{
+  width: 125px;
+  word-break:break-all
+ }
+.prepositionContentBox4 .Box4_content table{
+  width:984px;
+  height:305px;
+  border:1px solid #0a5c63;
+  margin:auto;
+}
+.prepositionContentBox4 .Box4_content table td{
+  border:1px solid #0a5c63;
+  width:150px;
+}
+.prepositionContentBox4 .Box4_content table tr{
+  color: #fff;
+  font-size: 16px;
+  height:50px;
+  height:50px;
+}
+.prepositionContentBox4 .Box4_content table thead tr:first-child{
+  color: #00fcff;
+  font-weight: 520;
+  font-size: 18px;
+}
+.page{
+  
+  float: right;
+  height: 64px;
+  line-height: 64px;
+  font-size: 16px;
+}
+ .M-box {
+  display: inline-block!important;
+}
+.prepositionContentBox4 .M-box .active,
+ .prepositionContentBox4 .M-box1 .active,
+ .prepositionContentBox4 .M-box2 .active,
+ .prepositionContentBox4 .M-box3 .active,
+ .prepositionContentBox4 .M-box4 .active {
+  border: none;
+  background-color: transparent;
+  padding: 0 10px;
+  margin: 0;
+  line-height: 64px;
+  color: #4b8ed8;
+}
+ .prepositionContentBox4 .M-box a,
+ .prepositionContentBox4 .M-box1 a,
+ .prepositionContentBox4 .M-box2 a,
+ .prepositionContentBox4 .M-box3 a,
+ .prepositionContentBox4 .M-box4 a {
+  border: none;
+  background-color: transparent;
+  line-height: 64px;
+  padding: 0 10px;
+  margin: 0;
+  color: #676767;
+}
+ .prepositionContentBox4 .M-box span,
+ .prepositionContentBox4 .M-box1 span,
+ .prepositionContentBox4 .M-box2 span,
+ .prepositionContentBox4 .M-box3 span,
+ .prepositionContentBox4 .M-box4 span {
+  line-height: 56px;
+  padding: 0 10px;
+}
+ .prepositionContentBox4 .M-box a:hover,
+ .prepositionContentBox4 .M-box1 a:hover,
+ .prepositionContentBox4 .M-box2 a:hover,
+ .prepositionContentBox4 .M-box3 a:hover,
+ .prepositionContentBox4 .M-box4 a:hover {
+  color: #4b8ed8;
+  background-color: transparent;
+}
+ .prepositionContentBox4 .M-box input {
+  margin-top: 20px;
+  color: #676767;
+}
+#line_chart {
+  width: 1004px;
+  height: 410px;
+/*  background-color: #f00;*/
+}

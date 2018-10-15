@@ -1,0 +1,207 @@
+#zz_index{
+    height: 1080px;
+    width: 1920px;
+    background: url(../images/body_bj.png);
+    position: relative;
+}
+#zz_index .homePage{
+    width: 1920px;
+    height: 990px;
+}
+#zz_index .homePage .title ul{
+    float: right;
+    margin-top: 20px;
+}
+#zz_index .homePage .title ul li{
+    float: left;
+    color: wheat;
+    width: 98px;
+    height: 98px;
+    margin-right: 20px;
+    border-radius: 6px;
+}
+#zz_index .homePage .title ul li:nth-child(1){
+    background-color:rgba(0,255,255,0.2);
+    border: 1px solid #00ffff; 
+}
+#zz_index .homePage .title ul li:nth-child(1) span:nth-child(1){
+    display: block;
+    width: 98px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 18px;
+    color: #00ffff;
+    background-color:rgba(0,255,255,0.2); 
+}
+#zz_index .homePage .title ul li:nth-child(1) span:nth-child(2){
+    display: block;
+    width: 98px;
+    height: 73px;
+    line-height: 73px;
+    text-align: center;
+    font-size: 48px;
+    color: #00ffff;
+}
+#zz_index .homePage .title ul li:nth-child(2){
+    background-color:rgba(220,175,14,0.2);
+    border: 1px solid #dcaf0e; 
+}
+#zz_index .homePage .title ul li:nth-child(2) span:nth-child(1){
+    display: block;
+    width: 98px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 18px;
+    color: #dcaf0e;
+    background-color:rgba(220,175,14,0.2);
+}
+#zz_index .homePage .title ul li:nth-child(2) span:nth-child(2){
+    display: block;
+    width: 98px;
+    height: 73px;
+    line-height: 73px;
+    text-align: center;
+    font-size: 48px;
+    color: #dcaf0e;
+}
+#zz_index .homePage .title ul li:nth-child(3){
+    background-color:rgba(245,34,45,0.2);
+    border: 1px solid #f5222d; 
+}
+#zz_index .homePage .title ul li:nth-child(3) span:nth-child(1){
+    display: block;
+    width: 98px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 18px;
+    color: #f5222d;
+    background-color:rgba(245,34,45,0.2);
+}
+#zz_index .homePage .title ul li:nth-child(3) span:nth-child(2){
+    display: block;
+    width: 98px;
+    height: 73px;
+    line-height: 73px;
+    text-align: center;
+    font-size: 48px;
+    color: #f5222d;
+}
+#index{
+    width: 1920px;
+    height: 870px;
+    overflow: hidden;
+    z-index: 999;
+}
+#index .topUl{
+    font-size: 18px;
+    margin-left: 38px;
+    margin-top: 20px;
+}
+#index .topUl li{
+    float: left;
+    margin-left: 34px;
+    cursor: pointer;
+}
+#index .topUl li i{
+    display: block;
+    width: 78px;
+    height: 78px;
+    text-align: center;
+}
+.blue{
+    background: url(../images/icon_zz-blue.png) no-repeat center center;
+}
+.red{
+    background: url(../images/icon_red.png) no-repeat center center;
+}
+.yellow{
+    background: url(../images/icon_yellow.png) no-repeat center center;
+}
+.gray{
+    background: url(../images/icon_gray.png) no-repeat center center;
+}
+.span_gray{
+    color: #747474;
+}
+.span_red{
+    color: #d32816;
+}
+.span_yellow{
+    color: #dcaf0e;
+}
+.span_blue{
+    color: #00ffff;
+}
+#index .topUl li span{
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    width: 79px
+}
+#index .topUl li b{
+    display: block;
+    width: 78px;
+    height: 78px;
+    text-align: center;
+    border: 1px solid #f5222d;
+    border-radius: 6px;
+    background: url(../images/icon_red.png) no-repeat center center;
+}
+#index .topUl li:nth-child(17),
+#index .topUl li:nth-child(18),
+#index .topUl li:nth-child(19),
+#index .topUl li:nth-child(20),
+#index .topUl li:nth-child(21),
+#index .topUl li:nth-child(22),
+#index .topUl li:nth-child(23),
+#index .topUl li:nth-child(24),
+#index .topUl li:nth-child(25),
+#index .topUl li:nth-child(26),
+#index .topUl li:nth-child(27),
+#index .topUl li:nth-child(28),
+#index .topUl li:nth-child(29),
+#index .topUl li:nth-child(30),
+#index .topUl li:nth-child(31),
+#index .topUl li:nth-child(32)
+{
+    margin-top: 560px;
+}
+.center{
+    position: absolute;
+    cursor: pointer;
+    width: 358px;
+    height: 198px;
+    border: 1px solid #00ffff;
+    border-radius: 6px;
+    left: 780px;
+    top: 524px;
+    background-color:rgba(0,255,255,0.1);
+    z-index: 999;
+}
+.center i{
+    display: block;
+    margin-top: 26px;
+    margin-left: 26px;
+    height: 142px;
+    width: 136px;
+    background: url(../images/icon_big.png) no-repeat center center;
+}
+.center span{
+    display: block;
+    color: #00ffff;
+    font-size: 36px;
+    margin-left: 18px;
+    line-height: 200px;
+}
+#myCanvas{
+    position: absolute;
+    top: 344px;
+    left: 74px;
+    z-index: 1;
+}

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<!-- 优先使用 IE 最新版本和 Chrome -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<!-- 避免IE使用兼容模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+	<link rel="stylesheet" type="text/css" href="css/css_reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/zZCenter.css" />
+	<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+	<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/zZCenter.js"></script>
+</head>
+
+<body>
+	<div id="monitoring_wrap">
+		<!--公共头部-->
+		<div id="common_head"></div>
+		<!--主要内容部分-->
+		<div class="monitoring_yl">
+			<!-- 当前位置 -->
+			<div class="report_tip clearfix">
+				<div class="tl fl"> 当前位置>>首页>>综治中心</div>
+				<div class="goback clearfix fr">
+					<a href="./index.html">
+						<i></i>
+						<span>返回</span>
+					</a>
+				</div>
+			</div>
+			<!-- 主体 -->
+			<div class="moni_wrap ">
+				<div class="moni_content">
+					<div class="service_item clearfix junScrollBar">
+						<!-- 单个 -->
+						<div class="item">
+							<div class="item_head" data-type='1'>接报服务</div>
+							<div class="item_bd">
+								<div class="item_title clearfix">
+									<span>运行状态:</span>
+									<span class="span_state ">活动</span>
+								</div>
+								<div class="item_state">
+									<p>
+										<span>接收消息:</span>
+										<span>1212</span>
+									</p>
+									<p>
+										<span>发出事件:</span>
+										<span>2323</span>
+									</p>
+								</div>
+								<div class="item_title">
+									<span>部署位置:</span>
+								</div>
+								<div class="item_position clearfix junScrollBar_hide">
+									<div class="position_item">
+										<p>192.168.1.150</p>
+										<div>
+											<img src="./images/icon_blue.png" alt="" class="">
+										</div>
+									</div>
+									<div class="position_item">
+										<p>192.168.1.1</p>
+										<div>
+											<img src="./images/icon_blue.png" alt="" class="">
+										</div>
+									</div>
+									<div class="position_item">
+										<p class="warning">192.168.1.2</p>
+										<div>
+											<img src="./images/icon_yellow.png" alt="" class="">
+										</div>
+									</div>
+									<div class="position_item">
+										<p class="">192.168.1.3</p>
+										<div>
+											<img src="./images/icon_blue.png" alt="" class="">
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+						<div class="item">
+							<div class="item_head" data-type='2'>指挥服务</div>
+							<div class="item_bd">
+								<div class="item_title clearfix">
+									<span>运行状态:</span>
+									<span class="span_state ">活动</span>
+								</div>
+								<div class="item_state">
+									<p>
+										<span>接收事件:</span>
+										<span>1212</span>
+									</p>
+									<p>
+										<span>发出指令:</span>
+										<span>2424</span>
+									</p>
+									<p>
+										<span>接收反馈:</span>
+										<span>2323</span>
+									</p>
+
+								</div>
+								<div class="item_title">
+									<span>部署位置:</span>
+								</div>
+								<div class="item_position clearfix junScrollBar_hide">
+									<div class="position_item">
+										<p>192.168.1.4</p>
+										<div>
+											<img src="./images/icon_blue.png" alt="" class="">
+										</div>
+									</div>
+									<div class="position_item">
+										<p>192.168.1.5</p>
+										<div>
+											<img src="./images/icon_blue.png" alt="" class="">
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="item">
+							<div class="item_head" data-type='3'>督导服务</div>
+							<div class="item_bd">
+								<div class="item_title clearfix">
+									<span>运行状态:</span>
+									<span class="span_state ">活动</span>
+								</div>
+								<div class="item_state">
+									<p>
+										<span>接收事件:</span>
+										<span>333</span>
+									</p>
+									<p>
+										<span>接收指令:</span>
+										<span>1234</span>
+									</p>
+									<p>
+										<span>接收反馈:</span>
+										<span>2361</span>
+									</p>
+								</div>
+								<div class="item_title">
+									<span>部署位置:</span>
+								</div>
+								<div class="item_position clearfix junScrollBar_hide">
+									<div class="position_item">
+										<p>192.168.1.6</p>
+										<div>
+											<img src="./images/icon_blue.png" alt="" class="">
+										</div>
+									</div>
+									<div class="position_item">
+										<p>192.168.1.7</p>
+										<div>
+											<img src="./images/icon_blue.png" alt="" class="">
+										</div>
+									</div>
+										<div class="position_item">
+										<p>192.168.1.8</p>
+										<div>
+											<img src="./images/icon_blue.png" alt="" class="">
+										</div>
+									</div>
+										<div class="position_item">
+										<p>192.168.1.9</p>
+										<div>
+											<img src="./images/icon_blue.png" alt="" class="">
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="item">
+							<div class="item_head" data-type='4'>综治通服务</div>
+							<div class="item_bd">
+								<div class="item_title clearfix">
+									<span>运行状态:</span>
+									<span class="span_state ">活动</span>
+								</div>
+								<div class="item_state">
+									<p>
+										<span>接收指令:</span>
+										<span>287</span>
+									</p>
+									<p>
+										<span>发出反馈:</span>
+										<span>323</span>
+									</p>
+									<p>
+										<span>接受任务:</span>
+										<span>693</span>
+									</p>
+									<p>
+										<span>发出任务:</span>
+										<span>261</span>
+									</p>
+									<p>
+										<span>发出上报:</span>
+										<span>801</span>
+									</p>
+								</div>
+								<div class="item_title">
+									<span>部署位置:</span>
+								</div>
+								<div class="item_position clearfix junScrollBar_hide">
+									<div class="position_item">
+										<p>192.168.1.10</p>
+										<div>
+											<img src="./images/icon_blue.png" alt="" class="">
+										</div>
+									</div>
+									<div class="position_item">
+										<p>192.168.1.11</p>
+										<div>
+											<img src="./images/icon_blue.png" alt="" class="">
+										</div>
+									</div>
+										<div class="position_item">
+										<p class="warning">192.168.1.12</p>
+										<div>
+											<img src="./images/icon_yellow.png" alt="" class="">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item_head" data-type='5'>公众号服务</div>
+							<div class="item_bd">
+								<div class="item_title clearfix">
+									<span>运行状态:</span>
+									<span class="span_state danger_state ">故障</span>
+								</div>
+								<div class="item_state">
+									<p>
+										<span>发出上报:</span>
+										<span>279</span>
+									</p>
+									<p>
+										<span>发出上诉:</span>
+										<span>351</span>
+									</p>
+								</div>
+								<div class="item_title">
+									<span>部署位置:</span>
+								</div>
+								<div class="item_position clearfix junScrollBar_hide">
+									<div class="position_item">
+										<p>192.168.1.13</p>
+										<div>
+											<img src="./images/icon_blue.png" alt="" class="">
+										</div>
+									</div>
+									<div class="position_item">
+										<p class="danger">192.168.1.14</p>
+										<div>
+											<img src="./images/icon_red.png" alt="" class="">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- <div id="common_footer"></div> -->
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+#common_head .header_con {
+	height: 90px;
+	/* width: 100%; */
+	width: 1920px;
+	padding: 0 20px;
+	box-sizing: border-box;
+	background: #2e6cb1;
+	text-align: center;
+	line-height: 90px;
+	background: url(../images/head_bg.png) no-repeat ;
+	background-size: cover;
+	font-size: 42px;
+	color: #FFFFFF;
+	line-height: 90px;
+	position: relative;
+}
+
+#common_head .header_con .left_con .weather .icon {
+	display: block;
+	width: 60px;
+	height: 60px;
+	background-repeat: no-repeat;
+	background-size:100% 100%;;
+}
+#common_head .header_con .left_con .weather .weather_des{
+	font-size: 14px;
+	line-height: 16px;
+}
+
+#common_head .header_con .left_con .time {
+	width: 124px;
+	height: 40px;
+	margin-left: 10px;
+	padding-top: 25px;
+}
+
+#common_head .header_con .left_con .time p {
+	height: 20px;
+	font-size: 16px;
+	color: #FFFFFF;
+	line-height: 20px;
+	text-align: left;
+	letter-spacing: 1px;
+	width:140px;
+}
+
+#common_head .header_con .center_con {
+	/*width: 220px;*/
+	box-sizing: border-box;
+	font-size: 42px;
+	line-height: 90px;
+	text-align: center;
+	color: #f9fcff;
+	font-weight: 600;
+	letter-spacing: 2px;
+	background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(249, 252, 255, 1)), to(rgba(118, 181, 255, 1)));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	position: absolute;
+	top: 0px;
+	/*left: 850px;*/
+	left: 829px;
+	
+}
+
+#common_head .header_con .right_con {
+	padding-top: 30px;
+}
+
+#common_head .header_con .right_con .user_icon {
+	display: block;
+	width: 34px;
+	height: 36px;
+	background: url(../images/user_icon.png) no-repeat;
+	background-size: cover;
+	margin-right: 14px;
+}
+
+#common_head .header_con .right_con .user_info {
+	padding-right: 10px;
+	border-right: 1px solid #FFFFFF;
+}
+
+#common_head .header_con .right_con .user_info p {
+	font-size: 16px;
+	line-height: 20px;
+	color: #FFFFFF;
+}
+
+#common_head .header_con .right_con .exit_icon {
+	display: block;
+	width: 42px;
+	height: 42px;
+	background: url(../images/exit_icon.png) no-repeat;
+	background-size: cover;
+	margin-left: 12px;
+}
+
+
+/*#main_container{
+	height: 978px;
+	box-sizing: border-box;
+	background: red;
+}*/
+
+#common_footer {
+	height: 12px;
+	background: #1a5aa2;
+}

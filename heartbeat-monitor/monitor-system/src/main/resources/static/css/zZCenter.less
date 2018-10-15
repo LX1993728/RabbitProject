@@ -1,0 +1,203 @@
+#monitoring_wrap{
+    height: 1080px;
+    width: 1920px;
+    display: flex;
+    flex-direction: column;
+    background: url('../images/body_bj.png') no-repeat;
+    .monitoring_yl{
+        flex: 1;
+        // 当前位置
+        // 当前位置
+        .report_tip{
+            padding: 0 20px;
+            height: 50px;
+            background-color: rgba(99,183,255,0.1);
+        .tl{
+            color: #fff;
+            height: 50px;line-height: 50px;
+            display: inline-block;
+        }
+        // 返回首页
+        .goback{
+                cursor: pointer;
+                /* background: #ddd; */
+                padding-top: 10px;
+            i{
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                border-radius: 100%;
+                background: url('../images/icon_back.png') no-repeat;
+                background-size: 100% 100%;
+                float: left;
+                margin-right: 10px;
+            }
+            span{
+                color: #999999;
+                font-size: 16px;
+                float: left;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                display: inline-block;
+            }
+
+         }
+        }
+        // 主体
+        .moni_wrap{
+            box-sizing: border-box;
+            padding: 0 52px;
+            .moni_content{
+                // background: #ddd;
+                // border: 1px solid #ddd;
+                height: 100%;
+                width: 100%;
+                .service_item{
+                    // padding:0 28px;
+                    height: 930px;
+                    overflow-y: auto;
+                    .item{
+                        margin-top: 56px;
+                        // width: 398px;
+                        width: 25%;
+                        box-sizing: border-box;
+                        height: 498px;
+                        float: left;
+                        padding: 0 28px;
+                        // background: rgba(0, 252, 255, 0.3);
+                        .item_head{
+                            height: 40px;
+                            line-height: 40px;
+                            background-color: rgba(99,183,255,0.3);
+                            color: rgb(0,252,255);
+                            font-size: 24px;
+                            text-align: center;
+                            border-width: 1px 1px 0px 1px;
+                            border-style: solid;
+                            border-radius: 4px 4px 0px 0px;
+                            border-color: #5487c8;
+                        }
+                        .item_bd{
+                            padding: 0  10px;
+                            background: rgba(99, 183, 255, 0.1);
+                            border-width: 0px 1px 1px 1px;
+                            border-style: solid;
+                            border-radius: 0px 0px 4px 4px;
+                            border-color: #5487c8;
+                            .item_title{
+                                height: 40px;
+                                line-height: 40px;
+                                padding-top: 10px;
+                                color: rgb(0,252,255);
+                                font-size: 20px;
+                                border-bottom: 1px solid rgba(0, 255, 255, 0.5);
+                                span:nth-child(1){
+                                    display: inline-block;
+                                     width: 96px;
+                                    height: 40px;
+                                    line-height: 40px;
+                                    box-sizing: border-box;
+                                    text-align: center;
+                                    border-bottom: 1px solid rgb(0,252,255);
+                                    float: left;
+                                    position: relative;
+                                }
+                                span:nth-child(1):after{
+                                        content: '';
+                                        width: 0px;
+                                        height: 0px;
+                                        display: inline-block;
+                                        position: absolute;
+                                        bottom: 0px;
+                                        left: 50%;
+                                        border: transparent transparent;
+                                        border-right: 4px solid transparent;
+                                        border-left: 4px solid transparent;
+                                        border-bottom: 6px solid #00ffff;
+                                }
+                                span:nth-child(2){
+                                    display: block;
+                                    width: 82px;
+                                    height: 24px;
+                                    line-height: 24px;
+                                    border-radius: 4px;
+                                    border: solid 1px rgb(0,255,255);
+                                        background-color: rgba(99, 183, 255, 0.1);
+                                    float: right;
+                                    margin-top: 7px;
+                                    text-align: center;
+                                }
+                                span.danger_state{
+                                    background-color: rgba(212,40,22,0.3);
+                                     border: 1px solid rgb(212,40,22);
+                                     color: rgb(212,40,22);
+                                }
+                            }
+                            .item_state{
+                                padding-top: 10px;
+                                height: 140px;
+                                p{
+                                    height: 28px;
+                                    line-height: 28px;
+                                    span{
+                                        // color: rgb(250,250,250);
+                                        font-size: 14px;
+                                    }
+                                    span:nth-child(1){
+                                        color: rgb(250,250,250);
+                                        margin-right: 15px;
+                                    }
+                                    span:nth-child(2){
+                                        color: rgb(0,252,255);
+
+                                    }
+                                }
+                            }
+                            .item_position{
+                                padding: 10px 0;
+                                height: 188px;
+                                overflow-y: auto;
+                                .position_item{
+                                    width: 33.3%;
+                                    float: left;
+                                    margin: 10px 0;
+                                    cursor: pointer;
+                                    p{
+                                        height: 28px;
+                                        line-height: 28px;
+                                        font-size: 14px;
+                                        color: rgb(0,252,255);
+                                        text-align: center;
+                                    }
+                                    p.warning{
+                                        color: rgb(240,191,18);
+                                    }
+                                    p.danger{
+                                        color: rgb(212,40,22);
+                                    }
+                                    div{
+                                        width: 100%;
+                                        height: 66px;
+                                        img{
+                                            width: 48px;
+                                            height: 66px;
+                                            margin: 0 auto;
+                                            display: block;
+                                        }
+                                    }
+                                
+                                }
+
+                            }
+
+                        }
+
+                    }
+                }
+            }
+        }
+
+
+    }
+}

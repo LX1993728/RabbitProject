@@ -1,0 +1,61 @@
+/* CSS Document */
+ *{ padding:0; margin:0;}
+li,ol{ list-style:none;}
+b,strong{ font-weight:normal;}
+i,em{ font-style:normal;}
+.clearfix:after{ display:block;content:'';height:0; clear:both; visibility:hidden; }
+.clearfix{ zoom:1;}
+li{ list-style-type:none;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+a{text-decoration:none; color: #000;}
+input,select{resize:none;}
+img{ border:0;}
+.fl{ float:left; }
+.fr{ float:right;}
+input{border:0; outline:none; background:none;}
+table{ border-collapse:collapse;text-align:center; vertical-align:middle;} 
+body{font-family:"Microsoft Yahei", Tahoma, "\5b8b\4f53", Arial, Helvetica;font-size:12px;}
+/* 滚动条 */
+.junScrollBar::-webkit-scrollbar {
+  width: 6px;
+  height: 0px;
+  background: rgba(75,142,216,0);
+}
+/* 定义滚动条轨道 内阴影+圆角 */
+.junScrollBar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(75,142,216,0);
+  background: rgba(75,142,216,0);
+}
+/* 定义滑块 内阴影+圆角 */
+.junScrollBar::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 0 6px rgba(75,142,216,1);
+  background-color:rgba(99,183,255,0.3);
+}
+.junScrollBar::-webkit-scrollbar-thumb:hover {
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 0 6px rgba(75,142,216,1);
+  background-color:rgba(75,142,216,1);
+}
+
+
+/* 不可见滚动条 */
+.junScrollBar_hide::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: rgba(255,255,255,0);
+}
+.junScrollBar_hide::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 0px rgba(255,255,255,0);
+  background: rgba(255,255,255,0);
+}
+.junScrollBar_hide::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0 0 0px rgba(255,255,255,0);
+  background-color:rgba(255,255,255,0);
+}
+.junScrollBar_hide::-webkit-scrollbar-thumb:hover {
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0 0 0px rgba(255,255,255,0);
+  background-color:rgba(255,255,255,0);
+}

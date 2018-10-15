@@ -20,26 +20,33 @@ public class InterceptorConfig  implements HandlerInterceptor {
 
     /**
      * 进入controller层之前拦截请求
-     * @param httpServletRequest
-     * @param httpServletResponse
+     * @param request
+     * @param response
      * @param o
      * @return
      * @throws Exception
      */
     @Override
-    public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
 
         log.info("---------------------开始进入请求地址拦截----------------------------");
-        log.info(httpServletRequest.getRequestURI());
-        log.info(httpServletRequest.getRequestURL().toString());
+        log.info(request.getRequestURI());
+        log.info(request.getRequestURL().toString());
 
-        HttpSession session = httpServletRequest.getSession();
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json; charset=utf-8");
+        response.setHeader("Access-Control-Allow-Credentials","true");
+        response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
+        response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        response.setHeader("Access-Control-Allow-Methods", "GET, HEAD, POST, PUT, DELETE, TRACE, OPTIONS, PATCH");
+
+        HttpSession session = request.getSession();
         if(session.getAttribute("user") != null){
             return true;
         } else{
-            PrintWriter printWriter = httpServletResponse.getWriter();
+            PrintWriter printWriter = response.getWriter();
             printWriter.write("{message:\" require login! \"}");
-            httpServletResponse.setStatus(401);
+            response.setStatus(401);
             return false;
         }
 

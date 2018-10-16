@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AppConfig {
 
-    private String fdfsUrl = "192.168.1.200";
+    private String fdfsUrl = "192.168.1.150";
 
 
     public String getFdfsUrl() {

@@ -29,9 +29,10 @@ $(function() {
 			type: 'get',
 			url: baseServerUrl + "/user/logout",
 			success: function (res) {
-			
+			    if(res == "success"){
 					window.location.href = './login.html'
 					localStorage.userInfo = ''
+				}
 			}
 		})
 	})

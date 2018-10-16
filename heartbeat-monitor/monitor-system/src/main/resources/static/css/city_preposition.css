@@ -349,6 +349,9 @@
 .prepositionContentBox3 table thead tr td:first-child{
   width:160px;
 }
+.prepositionContentBox3 table tbody tr td{
+  padding:0 8px;
+}
 .prepositionContentBox3 table thead tr td:last-child{
   width:520px;
 }
@@ -437,18 +440,18 @@
  }
 .prepositionContentBox4 .Box4_content table{
   width:984px;
-  height:305px;
+/*  height:305px;*/
   border:1px solid #0a5c63;
   margin:auto;
 }
 .prepositionContentBox4 .Box4_content table td{
   border:1px solid #0a5c63;
-  width:150px;
+  width:134px;
+  padding:0 8px;
 }
 .prepositionContentBox4 .Box4_content table tr{
   color: #fff;
   font-size: 16px;
-  height:50px;
   height:50px;
 }
 .prepositionContentBox4 .Box4_content table thead tr:first-child{

@@ -118,31 +118,34 @@ $(function(){
             color:["#00fff6","#9c00ff"],
             tooltip: {
                 trigger: 'item',
+                formatter: "{b}: {c}"
             },
             legend: {
-                selectedMode:false,
                 orient: 'vertical',
-                right: 0,
-                top: 20,
-                bottom: 20,
-                textStyle:{//图例文字的样式
-                    color:'#fff',
-                    fontSize:14
-                }
+                right:0,
+                top:20,
+                bottom:20,
+                textStyle:{
+                  color:"#fff",
+                  fontSize:14
+                },
+                data:['离线用户','在线用户']
             },
             series: [
-                {   center : ['50%', '50%'],
+                {
                     type:'pie',
+                    center:['40%','50%'],
                     radius: ['50%', '70%'],
                     avoidLabelOverlap: false,
                     label: {
                         normal: {
-                            show: false
+                            show: false,
+                            position: 'center'
                         },
                         emphasis: {
-                            show: true,
+                            show: false,
                             textStyle: {
-                                fontSize: '20',
+                                fontSize: '30',
                                 fontWeight: 'bold'
                             }
                         }
@@ -154,11 +157,11 @@ $(function(){
                     },
                     data:[
                         {value:arr[0], name:'离线用户'},
-                        {value:arr[1], name:'在线用户'},
+                        {value:arr[1], name:'在线用户'}
                     ]
                 }
             ]
-          };
+        };
           myChart.setOption(option);
     }
   })

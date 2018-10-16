@@ -1,5 +1,7 @@
 package com.monitor.system.controllers;
 
+import com.monitor.system.entity.ExceptionUser;
+import com.monitor.system.repository.GeneralService;
 import com.monitor.system.repository.TestService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @Autowired
     private TestService testService;
+    @Autowired
+    GeneralService generalService;
 
     @GetMapping("/add")
     public Object addTest() {
@@ -42,6 +46,14 @@ public class TestController {
     @GetMapping("/saveOrUpdate")
     public Object testSU(){
         testService.testSaveOrUpdate();
+        return "success";
+    }
+
+    @GetMapping("/test1")
+    public Object test1(){
+        ExceptionUser user = new ExceptionUser();
+        user.setUserName("张三测试乱码");
+        generalService.persisent(user);
         return "success";
     }
 }

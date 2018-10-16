@@ -19,7 +19,7 @@ $(function (){
         }
     })
 
-        // 判断当前用户是否是登录状态,如果不是则退回到登录页
+    // 判断当前用户是否是登录状态,如果不是则退回到登录页
     $.ajaxSetup({
         xhrFields:{
             withCredentials:true
@@ -27,7 +27,7 @@ $(function (){
         error: function(xhr, exception){ 
             if( xhr.status == "401") 
                 window.location.href = './login.html'; 
-    }        
+    }      
     })
 });
 	var baseServerUrl = "http://192.168.1.150:8011";

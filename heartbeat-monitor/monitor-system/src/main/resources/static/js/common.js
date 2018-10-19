@@ -29,6 +29,11 @@ $(function (){
                 window.location.href = './login.html'; 
     }      
     })
+
+    //关闭弹框
+    $(".info_confirm input").click(function(){
+        $(this).parents(".info_dialoge").hide();
+    })
 });
 	var baseServerUrl = "http://192.168.1.150:8011";
 
@@ -43,4 +48,12 @@ function GetQueryStringDecode(name) {
 	var r = window.location.search.substr(1).match(reg);
 	if (r != null) return unescape(decodeURI(r[2]));
 	return null;
+}
+// 显示信息弹窗方法
+function showInfo(content, title) {
+    $('.info_dialoge').show()
+    var content = content ? content : '操作成功'
+    var title = title ? title : '操作成功'
+    $('.info_dialoge .info_content p').html(content)
+    $('.info_dialoge .title').html(title)
 }

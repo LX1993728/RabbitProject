@@ -54,7 +54,7 @@ public class LoginController {
         Map<String,Object> resultMap = new HashMap<>();
         if (user.getUsername() == null || user.getUsername().trim().length() == 0){
             resultMap.put("isSuccess",false);
-            resultMap.put("info","username and password can't be empty");
+            resultMap.put("info","用户名和密码不能为空");
             return resultMap;
         }
         String username = user.getUsername().trim();
@@ -65,7 +65,7 @@ public class LoginController {
                 .getResultList();
         if (listUsers.size() == 0){
             resultMap.put("isSuccess",false);
-            resultMap.put("info","no user");
+            resultMap.put("info","不存在此用户");
             return resultMap;
         }
 
@@ -74,7 +74,7 @@ public class LoginController {
         if (MD5Utils.getStrMD5(password+u.getSalt()).equals(realPass)){
 
             resultMap.put("isSuccess",true);
-            resultMap.put("info","success login");
+            resultMap.put("info","登录成功");
             u.setPassword(null);
             u.setSalt(null);
             resultMap.put("user",u);
@@ -84,7 +84,7 @@ public class LoginController {
         }
 
         resultMap.put("isSuccess",false);
-        resultMap.put("info","error pass");
+        resultMap.put("info","密码错误");
         return resultMap;
     }
 

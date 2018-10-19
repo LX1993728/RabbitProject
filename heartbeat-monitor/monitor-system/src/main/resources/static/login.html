@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>平台运维监控</title>
 	<!-- 优先使用 IE 最新版本和 Chrome -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<!-- 避免IE使用兼容模式 -->
@@ -11,6 +11,7 @@
 	<meta name="renderer" content="webkit">
 	<link rel="stylesheet" type="text/css" href="./css/css_reset.css" />
 	<link rel="stylesheet" href="./css/login.css">
+		<link rel="stylesheet" href="./css/info_dialoge.css">
 	<script src="js/jquery-1.11.0.js"></script>
 	<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
@@ -21,7 +22,7 @@
 <body>
 	<div class="login_conainer">
 		<div class="login_title">
-			<p>菏泽市指挥调度子系统</p>
+			<p>菏泽市指挥调度监控系统</p>
 		</div>
 		<div class="main_con">
 			<p class="title">系统登录</p>
@@ -39,6 +40,18 @@
 			<div class="isremember clearfix">
 				<span class="fr">记住账号</span>
 				<input class="fr" type="checkbox">
+			</div>
+		</div>
+	</div>
+	<!-- 通知弹窗 -->
+	<div class="info_dialoge">
+		<div class="info_container">
+			<p class="title">操作成功</p>
+			<div class="info_content">
+				<p>操作成功！</p>
+			</div>
+			<div class="info_confirm">
+				<input type="button" value="确定">
 			</div>
 		</div>
 	</div>

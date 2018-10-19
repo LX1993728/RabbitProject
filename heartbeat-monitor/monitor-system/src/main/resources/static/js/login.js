@@ -61,7 +61,7 @@ $(function () {
                         localStorage.userInfo = JSON.stringify(res.user)
                         window.location.href = './index.html'
                     } else {
-                        alert(res.info)
+                        showInfo("账号密码错误", "操作失败")
                     } 
                 }
             })

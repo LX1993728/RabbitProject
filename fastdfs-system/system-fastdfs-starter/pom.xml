@@ -5,8 +5,8 @@
 
     <groupId>system.fastdfs.starter</groupId>
     <artifactId>system-fastdfs-starter</artifactId>
-    <!--<version>0.0.1-SNAPSHOT</version>-->
-    <version>0.0.1-RELEASE</version>
+    <version>0.0.1-SNAPSHOT</version>
+    <!--<version>0.0.1-RELEASE</version>-->
     <packaging>jar</packaging>
 
     <name>system-fastdfs-starter</name>

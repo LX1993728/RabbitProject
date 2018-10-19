@@ -5,8 +5,8 @@
 
     <groupId>batch.update.starter</groupId>
     <artifactId>batch-update-starter</artifactId>
-    <!--<version>0.0.1-SNAPSHOT</version>-->
-    <version>0.0.1-RELEASE</version>
+    <version>0.0.1-SNAPSHOT</version>
+    <!--<version>0.0.1-RELEASE</version>-->
 
     <packaging>jar</packaging>
 

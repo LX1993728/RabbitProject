@@ -5,8 +5,8 @@
 
     <groupId>heartbeat.monitor</groupId>
     <artifactId>heartbeat-monitor-starter</artifactId>
-    <!--<version>0.0.1-SNAPSHOT</version>-->
-    <version>0.0.1-RELEASE</version>
+    <version>0.0.1-SNAPSHOT</version>
+    <!--<version>0.0.1-RELEASE</version>-->
     <packaging>jar</packaging>
 
     <name>heartbeat-monitor-starter</name>

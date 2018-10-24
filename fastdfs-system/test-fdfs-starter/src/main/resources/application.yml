@@ -1,14 +1,14 @@
 server:
-  port: 8081
+  port: 8088
 batch:
   system:
     enabled: true
     flag: DIRECT
-spring:
-  rabbitmq:
-    host: 192.168.1.150
-    port: 5672
-    password: guest
+#spring:
+#  rabbitmq:
+#    host: 192.168.1.150
+#    port: 5672
+#    password: guest
   jmx:
     enabled: false
 

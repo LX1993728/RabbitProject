@@ -12,3 +12,8 @@ batch:
   jmx:
     enabled: false
 
+fdfs:
+  so-timeout: 100000
+  connect-timeout: 60000
+  tracker-list:
+    - 192.168.43.150:22122

@@ -5,8 +5,8 @@
 
     <groupId>heartbeat.monitor</groupId>
     <artifactId>heartbeat-monitor-starter</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <!--<version>0.0.1-RELEASE</version>-->
+    <!--<version>0.0.1-SNAPSHOT</version>-->
+    <version>0.0.1-RELEASE</version>
     <packaging>jar</packaging>
 
     <name>heartbeat-monitor-starter</name>
@@ -79,12 +79,12 @@
         <repository>
             <id>releases</id>
             <name>Internal Releases</name>
-            <url>http://124.204.45.69:9081/nexus/content/repositories/releases/</url>
+            <url>http://192.168.1.151:8081/nexus/content/repositories/releases/</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <name>Internal Snapshots</name>
-            <url>http://124.204.45.69:9081/nexus/content/repositories/snapshots/</url>
+            <url>http://192.168.1.151:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 

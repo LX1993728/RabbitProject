@@ -6,6 +6,7 @@ import com.monitor.system.repository.TestService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +17,9 @@ public class TestController {
     private TestService testService;
     @Autowired
     GeneralService generalService;
+
+    @Value("${fdfs-host}")
+    private String fdfsHost;
 
     @GetMapping("/add")
     public Object addTest() {
@@ -56,4 +60,10 @@ public class TestController {
         generalService.persisent(user);
         return "success";
     }
+
+    @GetMapping("/aaa")
+    public Object aaa(){
+        return fdfsHost;
+    }
+
 }

@@ -5,12 +5,14 @@ import org.apache.commons.io.FilenameUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import system.fastdfs.starter.config.AppConfig;
 import com.github.tobato.fastdfs.domain.StorePath;
 import com.github.tobato.fastdfs.exception.FdfsUnsupportStorePathException;
 import org.apache.commons.lang3.StringUtils;
+import system.fastdfs.starter.domin.FdfsProperties;
 
 import java.io.*;
 import java.nio.charset.Charset;
@@ -20,6 +22,7 @@ import java.nio.charset.Charset;
  * @apiNote FastDFS 文件上传下载包装类
  */
 @Component
+@EnableConfigurationProperties(FdfsProperties.class)
 public class FdfsClientWrapper {
     private final Logger logger = LoggerFactory.getLogger(FdfsClientWrapper.class);
 
@@ -28,6 +31,9 @@ public class FdfsClientWrapper {
 
     @Autowired
     private AppConfig appConfig;
+
+    @Autowired
+    private FdfsProperties fdfsProperties;
 
     /**
      * @apiNote 上传具体目录的文件
@@ -89,8 +95,12 @@ public class FdfsClientWrapper {
 
     // 封装图片完整URL地址
     private String getResAccessUrl(StorePath storePath) {
-        String fileUrl = "http://" + appConfig.getFdfsUrl()+ "/" + storePath.getFullPath();
-        return fileUrl;
+        String fileUrl = "";
+          if (fdfsProperties.getStrip()){
+              return  "/"+storePath.getFullPath();
+          }else {
+              return "http://" + appConfig.getFdfsUrl()+ "/" + storePath.getFullPath();
+          }
     }
 
     /**

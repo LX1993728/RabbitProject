@@ -25,7 +25,7 @@ public class TestUploadController {
     public Object uploadTest(){
         String s = null;
         try {
-            s = fdfsClientWrapper.uploadFile(new File("/Users/liuxun/Desktop/2.png"));
+            s = fdfsClientWrapper.uploadFile(new File("C:\\Users\\liuxun\\Desktop\\2.png"));
 
         } catch (IOException e) {
             e.printStackTrace();

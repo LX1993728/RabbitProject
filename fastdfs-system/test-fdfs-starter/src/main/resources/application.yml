@@ -1,9 +1,5 @@
 server:
   port: 8088
-batch:
-  system:
-    enabled: true
-    flag: DIRECT
 #spring:
 #  rabbitmq:
 #    host: 192.168.1.150
@@ -16,4 +12,6 @@ fdfs:
   so-timeout: 100000
   connect-timeout: 60000
   tracker-list:
-    - 192.168.43.150:22122
+    - 192.168.1.210:22122
+  prefix:
+    strip: true

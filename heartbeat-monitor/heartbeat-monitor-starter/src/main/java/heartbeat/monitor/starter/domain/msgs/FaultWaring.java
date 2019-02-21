@@ -14,6 +14,8 @@ public class FaultWaring implements Serializable {
     public FaultWaring() {
     }
 
+    private Long id; //ID
+
     private Date warnBeginTime; // 预警开始时间
 
     private String warnIp; // 预警IP
@@ -24,6 +26,15 @@ public class FaultWaring implements Serializable {
     private String flag; // 系统标识
 
     private String  prepositionId; // 如果非部委前置系统，此字段是空值
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Date getWarnBeginTime() {
         return warnBeginTime;

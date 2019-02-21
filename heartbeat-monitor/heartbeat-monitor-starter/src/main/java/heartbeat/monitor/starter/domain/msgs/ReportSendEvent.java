@@ -13,8 +13,6 @@ public class ReportSendEvent extends ReportMsgInfo {
 
     private Date sendTime; // 发出时间
 
-    private String sendIp; // 发出IP
-
     private Boolean isSuccess; // 是否发送成功
 
     public String getEventId() {
@@ -31,14 +29,6 @@ public class ReportSendEvent extends ReportMsgInfo {
 
     public void setSendTime(Date sendTime) {
         this.sendTime = sendTime;
-    }
-
-    public String getSendIp() {
-        return sendIp;
-    }
-
-    public void setSendIp(String sendIp) {
-        this.sendIp = sendIp;
     }
 
     public Boolean getSuccess() {

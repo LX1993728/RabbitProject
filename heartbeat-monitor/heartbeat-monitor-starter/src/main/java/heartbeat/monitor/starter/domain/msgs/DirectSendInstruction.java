@@ -15,8 +15,6 @@ public class DirectSendInstruction extends DirectMsgInfo {
 
     private Date sendTime; // 发出时间
 
-    private String sendIp; // 发出IP
-
     private Boolean isSuccess; // 是否成功
 
 
@@ -44,14 +42,6 @@ public class DirectSendInstruction extends DirectMsgInfo {
         this.sendTime = sendTime;
     }
 
-    public String getSendIp() {
-        return sendIp;
-    }
-
-    public void setSendIp(String sendIp) {
-        this.sendIp = sendIp;
-    }
-
     public Boolean getSuccess() {
         return isSuccess;
     }
@@ -59,4 +49,6 @@ public class DirectSendInstruction extends DirectMsgInfo {
     public void setSuccess(Boolean success) {
         isSuccess = success;
     }
+
+
 }

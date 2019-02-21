@@ -11,8 +11,6 @@ public class DirectReceiveEvent extends DirectMsgInfo {
 
     private Date receiveTime;// 接收时间
 
-    private String sendIp; // 发出IP
-
     private Boolean isResolved; // 是否处理完毕
 
     public Date getReceiveTime() {
@@ -23,14 +21,6 @@ public class DirectReceiveEvent extends DirectMsgInfo {
         this.receiveTime = receiveTime;
     }
 
-    public String getSendIp() {
-        return sendIp;
-    }
-
-    public void setSendIp(String sendIp) {
-        this.sendIp = sendIp;
-    }
-
     public Boolean getResolved() {
         return isResolved;
     }
@@ -38,4 +28,6 @@ public class DirectReceiveEvent extends DirectMsgInfo {
     public void setResolved(Boolean resolved) {
         isResolved = resolved;
     }
+
+
 }

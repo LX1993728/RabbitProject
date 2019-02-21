@@ -15,8 +15,6 @@ public class GridManSendExecution extends GridManMsgInfo {
     private String instructionId; // 指令ID
     private String executionId; // 反馈ID
     private Date sendTime; // 发出时间
-    private String sendIp; // 发出IP
-    private String receiveIp; // 接收IP
     private Boolean isSuccess; // 是否成功
 
     public String getEventId() {
@@ -57,22 +55,6 @@ public class GridManSendExecution extends GridManMsgInfo {
 
     public void setSendTime(Date sendTime) {
         this.sendTime = sendTime;
-    }
-
-    public String getSendIp() {
-        return sendIp;
-    }
-
-    public void setSendIp(String sendIp) {
-        this.sendIp = sendIp;
-    }
-
-    public String getReceiveIp() {
-        return receiveIp;
-    }
-
-    public void setReceiveIp(String receiveIp) {
-        this.receiveIp = receiveIp;
     }
 
     public Boolean getSuccess() {

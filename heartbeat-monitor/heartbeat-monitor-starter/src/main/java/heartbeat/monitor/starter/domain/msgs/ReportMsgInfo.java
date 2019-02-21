@@ -6,20 +6,20 @@ import java.io.Serializable;
  * @apiNote 接报的监控数据的父类
  * @author liuxun
  */
-public class ReportMsgInfo implements Serializable {
+public class ReportMsgInfo extends BaseInfo implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public ReportMsgInfo() {
     }
 
+    private Long id; // 主键ID
 
-    private String  receiveIp; // 接收IP
-
-    public String getReceiveIp() {
-        return receiveIp;
+    public Long getId() {
+        return id;
     }
 
-    public void setReceiveIp(String receiveIp) {
-        this.receiveIp = receiveIp;
+    public void setId(Long id) {
+        this.id = id;
     }
+
 }

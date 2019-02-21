@@ -2,16 +2,18 @@ package heartbeat.monitor.starter.domain.msgs;
 
 import java.io.Serializable;
 
-public class DirectMsgInfo implements Serializable {
+/**
+ * @apiNote 指挥系统消息的 监控数据父类
+ */
+public class DirectMsgInfo extends BaseInfo implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public DirectMsgInfo() {
     }
 
+    private Long id; // 主键ID
 
     private String eventId; // 事件标识
-
-    private String  receiveIp; // 接收IP
 
     public String getEventId() {
         return eventId;
@@ -21,11 +23,12 @@ public class DirectMsgInfo implements Serializable {
         this.eventId = eventId;
     }
 
-    public String getReceiveIp() {
-        return receiveIp;
+    public Long getId() {
+        return id;
     }
 
-    public void setReceiveIp(String receiveIp) {
-        this.receiveIp = receiveIp;
+    public void setId(Long id) {
+        this.id = id;
     }
+
 }

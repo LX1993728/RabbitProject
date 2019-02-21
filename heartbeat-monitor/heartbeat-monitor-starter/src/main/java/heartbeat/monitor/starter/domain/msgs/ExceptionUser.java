@@ -1,28 +1,36 @@
 package heartbeat.monitor.starter.domain.msgs;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
- * @author liuxun
  * @apiNote 异常用户
+ * @author liuxun
  */
 public class ExceptionUser implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public ExceptionUser() {
     }
+    private Long id; // ID
 
-    private String userName; // 登录用户名
+    private String  userName; // 登录用户名
 
     private String ip;  // 用户登录IP
 
-    private String exceptionType; // 异常类型
+    private String  exceptionType; // 异常类型
 
 
     private String flag; // 系统标识
 
-    private String prepositionId; // 如果非部委前置系统，此字段是空值
+    private String  prepositionId; // 如果非部委前置系统，此字段是空值
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getUserName() {
         return userName;
@@ -64,4 +72,5 @@ public class ExceptionUser implements Serializable {
         this.prepositionId = prepositionId;
     }
 
-}
+
+  }
